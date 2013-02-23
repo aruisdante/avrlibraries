@@ -1,0 +1,44 @@
+\hypertarget{struct_m_a_t_l_a_b___m_e_s_s_a_g_e}{
+\section{MATLAB\_\-MESSAGE Struct Reference}
+\label{struct_m_a_t_l_a_b___m_e_s_s_a_g_e}\index{MATLAB\_\-MESSAGE@{MATLAB\_\-MESSAGE}}
+}
+
+
+data structure for passing data back and forth from Matlab  
+
+
+{\ttfamily \#include $<$Final\_\-Project.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_j_o_i_n_t}{JOINT} $\ast$ \hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_ad41080e99260883c7dc3f6ff4e6bd8e1}{joint}
+\item 
+\hyperlink{union_s_t_a_t_e___f_l_a_g_s}{STATE\_\-FLAGS} $\ast$ \hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_a77d1dcd66c0011ade92624e6b19d1357}{flags}
+\item 
+\hyperlink{struct_o_b_j_e_c_t___l_o_c_a_t_i_o_n}{OBJECT\_\-LOCATION} $\ast$ \hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_aeeb0580cde8a31744a5501d327431166}{location}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+data structure for passing data back and forth from Matlab 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_a77d1dcd66c0011ade92624e6b19d1357}{
+\index{MATLAB\_\-MESSAGE@{MATLAB\_\-MESSAGE}!flags@{flags}}
+\index{flags@{flags}!MATLAB_MESSAGE@{MATLAB\_\-MESSAGE}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-FLAGS}$\ast$ {\bf MATLAB\_\-MESSAGE::flags}}}
+\label{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_a77d1dcd66c0011ade92624e6b19d1357}
+Pointer to the state flags \hypertarget{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_ad41080e99260883c7dc3f6ff4e6bd8e1}{
+\index{MATLAB\_\-MESSAGE@{MATLAB\_\-MESSAGE}!joint@{joint}}
+\index{joint@{joint}!MATLAB_MESSAGE@{MATLAB\_\-MESSAGE}}
+\subsubsection[{joint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf JOINT}$\ast$ {\bf MATLAB\_\-MESSAGE::joint}}}
+\label{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_ad41080e99260883c7dc3f6ff4e6bd8e1}
+Pointer to a the first element in an array of joints that the MATLAB program is supposed to operate on. Must be in order staring at the joint closest to the base. \hypertarget{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_aeeb0580cde8a31744a5501d327431166}{
+\index{MATLAB\_\-MESSAGE@{MATLAB\_\-MESSAGE}!location@{location}}
+\index{location@{location}!MATLAB_MESSAGE@{MATLAB\_\-MESSAGE}}
+\subsubsection[{location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OBJECT\_\-LOCATION}$\ast$ {\bf MATLAB\_\-MESSAGE::location}}}
+\label{struct_m_a_t_l_a_b___m_e_s_s_a_g_e_aeeb0580cde8a31744a5501d327431166}
+Pointer to the object Location 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_final___project_8h}{Final\_\-Project.h}\end{DoxyCompactItemize}

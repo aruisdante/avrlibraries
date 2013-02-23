@@ -1,0 +1,85 @@
+\hypertarget{_lab1___demos_8c}{
+\section{Lab1\_\-Demos.c File Reference}
+\label{_lab1___demos_8c}\index{Lab1\_\-Demos.c@{Lab1\_\-Demos.c}}
+}
+
+
+Lab 1 main source file.  
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}portIO.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ADC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Timer16\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include $<$avr$\backslash$io.h$>$}\par
+{\ttfamily \#include $<$avr$\backslash$delay.h$>$}\par
+{\ttfamily \#include $<$avr$\backslash$interrupt.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_lab1___demos_8c_a6476f61cf20e200982045762e9154173}{
+void \hyperlink{_lab1___demos_8c_a6476f61cf20e200982045762e9154173}{Step\_\-2} ()}
+\label{_lab1___demos_8c_a6476f61cf20e200982045762e9154173}
+
+\begin{DoxyCompactList}\small\item\em Code for solving step 2 of the lab. \item\end{DoxyCompactList}\item 
+\hypertarget{_lab1___demos_8c_a6219e5bcd2984ba5bc145ffa69fe224c}{
+void \hyperlink{_lab1___demos_8c_a6219e5bcd2984ba5bc145ffa69fe224c}{Step\_\-3} ()}
+\label{_lab1___demos_8c_a6219e5bcd2984ba5bc145ffa69fe224c}
+
+\begin{DoxyCompactList}\small\item\em Code for solving step 3 of the lab. \item\end{DoxyCompactList}\item 
+\hypertarget{_lab1___demos_8c_a12295466d770559386671cc7ec8c7b2a}{
+void \hyperlink{_lab1___demos_8c_a12295466d770559386671cc7ec8c7b2a}{Step\_\-6} ()}
+\label{_lab1___demos_8c_a12295466d770559386671cc7ec8c7b2a}
+
+\begin{DoxyCompactList}\small\item\em Code for solving step 6 of the lab. \item\end{DoxyCompactList}\item 
+unsigned int \hyperlink{_lab1___demos_8c_a377639af985f5937b588a81f30ed0209}{Switch\_\-To\_\-Frequency} (char pins)
+\begin{DoxyCompactList}\small\item\em Converts a switch press into a frequency setting. \item\end{DoxyCompactList}\item 
+\hyperlink{_lab1___demos_8c_a04d3f94da90f7ac1b018f80f321e86de}{ISR} (BADISR\_\-vect)
+\begin{DoxyCompactList}\small\item\em Overwrites the default unhandled interrupt vector. \item\end{DoxyCompactList}\item 
+\hypertarget{_lab1___demos_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{
+int {\bfseries main} ()}
+\label{_lab1___demos_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_lab1___demos_8c_ad2c79e7569cbb6bbd9a5632a509151f0}{
+struct \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} \hyperlink{_lab1___demos_8c_ad2c79e7569cbb6bbd9a5632a509151f0}{sensor}}
+\label{_lab1___demos_8c_ad2c79e7569cbb6bbd9a5632a509151f0}
+
+\begin{DoxyCompactList}\small\item\em global struct containing the ADC sensor data \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lab 1 main source file. This source file contains the main code loops for Lab 1. Additional functionality is provided by various header files
+
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+
+Joel Sotherland 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26-\/Jan-\/2009 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{_lab1___demos_8c_a04d3f94da90f7ac1b018f80f321e86de}{
+\index{Lab1\_\-Demos.c@{Lab1\_\-Demos.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Lab1_Demos.c@{Lab1\_\-Demos.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (BADISR\_\-vect)}}
+\label{_lab1___demos_8c_a04d3f94da90f7ac1b018f80f321e86de}
+
+
+Overwrites the default unhandled interrupt vector. Overwrites the bad ISR vector to write out an error message to the serial port instead of killing the processor \hypertarget{_lab1___demos_8c_a377639af985f5937b588a81f30ed0209}{
+\index{Lab1\_\-Demos.c@{Lab1\_\-Demos.c}!Switch\_\-To\_\-Frequency@{Switch\_\-To\_\-Frequency}}
+\index{Switch\_\-To\_\-Frequency@{Switch\_\-To\_\-Frequency}!Lab1_Demos.c@{Lab1\_\-Demos.c}}
+\subsubsection[{Switch\_\-To\_\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Switch\_\-To\_\-Frequency (char {\em pins})}}
+\label{_lab1___demos_8c_a377639af985f5937b588a81f30ed0209}
+
+
+Converts a switch press into a frequency setting. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em pins}]The value of the pins attached to the switches on the STK500 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A frequency value from 1-\/100Hz depending on the swtich pressed 
+\end{DoxyReturn}

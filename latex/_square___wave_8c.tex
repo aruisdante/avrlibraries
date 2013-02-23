@@ -1,0 +1,121 @@
+\hypertarget{_square___wave_8c}{
+\section{Square\_\-Wave.c File Reference}
+\label{_square___wave_8c}\index{Square\_\-Wave.c@{Square\_\-Wave.c}}
+}
+
+
+Functions for generating square waves.  
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Square\_\-Wave.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ADC.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_square___wave_8c_ab27d12aac1a3a46aed25604d4c00cc18}{
+\#define \hyperlink{_square___wave_8c_ab27d12aac1a3a46aed25604d4c00cc18}{PRESCALE}~1024}
+\label{_square___wave_8c_ab27d12aac1a3a46aed25604d4c00cc18}
+
+\begin{DoxyCompactList}\small\item\em prescale value for timer calculations \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_square___wave_8c_ad39420cdd896dd12c68e36313139d0a5}{ISR} (TIMER1\_\-COMPA\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR handler for Timer1 compare A match. \item\end{DoxyCompactList}\item 
+\hyperlink{_square___wave_8c_ab16889ae984b9b798989a0d239283cac}{ISR} (TIMER1\_\-OVF\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR handler for Timer1 overflow. \item\end{DoxyCompactList}\item 
+void \hyperlink{_square___wave_8c_a52b985b2d96f88f4e12d16c384897d9f}{Square\_\-Wave16\_\-Initialize} (unsigned int frequency, unsigned int fclk)
+\begin{DoxyCompactList}\small\item\em Initialize the square wave generator with a frequency. \item\end{DoxyCompactList}\item 
+void \hyperlink{_square___wave_8c_a15232da08d45d1dbbba802686a4139bf}{Timer16\_\-Initialize} (unsigned int frequency, unsigned int fclk)
+\begin{DoxyCompactList}\small\item\em Initialize a 16bit timer. \item\end{DoxyCompactList}\item 
+void \hyperlink{_square___wave_8c_af083541f6f63f9bf5db4f2ecc14800ab}{Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle} (char dutyCycle)
+\begin{DoxyCompactList}\small\item\em Set the duty cycle of the square wave. \item\end{DoxyCompactList}\item 
+void \hyperlink{_square___wave_8c_a8922e82db0ec93238b8cd21400aed72d}{Square\_\-Wave16\_\-Set\_\-Freq} (unsigned int frequency, unsigned int fclk)
+\begin{DoxyCompactList}\small\item\em Set the frequency of the square wave. \item\end{DoxyCompactList}\item 
+void \hyperlink{_square___wave_8c_a2d293a6de5a7239cdad5eb7273cbe98f}{Timer16\_\-Set\_\-Freq} (unsigned int frequency, unsigned int fclk)
+\begin{DoxyCompactList}\small\item\em Set the frequency of the timer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for generating square waves. This source file contains functions for generating square waves using the 16bit timer on the AVR and interrupts
+
+\begin{DoxyDate}{Date}
+Jan 25, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+
+Joel Sutherland 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.1
+\end{DoxyVersion}
+Version Log: 1.1 Version 1.0: Initial version with Timer\_\-Initilize and Timer\_\-Set\_\-Duty\_\-Cycle, and ISR(TIMER1\_\-COMPA) and ISR(TIMER1\_\-CAPT) Version 1.1: Reworked Timer\_\-Initilize and Timer\_\-Set\_\-Duty\_\-Cycle to Square\_\-Wave16\_\-Initialize and Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle. Added Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle and Square\_\-Wave16\_\-Set\_\-Freq 
+
+\subsection{Function Documentation}
+\hypertarget{_square___wave_8c_ab16889ae984b9b798989a0d239283cac}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (TIMER1\_\-OVF\_\-vect)}}
+\label{_square___wave_8c_ab16889ae984b9b798989a0d239283cac}
+
+
+ISR handler for Timer1 overflow. This ISR is run when the value TCNT1 matches ICR1. It blinks an LED on PORTB and toggles a pin on PORTD \hypertarget{_square___wave_8c_ad39420cdd896dd12c68e36313139d0a5}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (TIMER1\_\-COMPA\_\-vect)}}
+\label{_square___wave_8c_ad39420cdd896dd12c68e36313139d0a5}
+
+
+ISR handler for Timer1 compare A match. This ISR is run when the value in OCR1A matches TCNT1. It blinks an LED on PORTB and toggles a pin on PORTD \hypertarget{_square___wave_8c_a52b985b2d96f88f4e12d16c384897d9f}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!Square\_\-Wave16\_\-Initialize@{Square\_\-Wave16\_\-Initialize}}
+\index{Square\_\-Wave16\_\-Initialize@{Square\_\-Wave16\_\-Initialize}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{Square\_\-Wave16\_\-Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Square\_\-Wave16\_\-Initialize (unsigned int {\em frequency}, \/  unsigned int {\em fclk})}}
+\label{_square___wave_8c_a52b985b2d96f88f4e12d16c384897d9f}
+
+
+Initialize the square wave generator with a frequency. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em frequency}]the desired frequency in Hz \item[\mbox{$\leftarrow$} {\em fclk}]the base clock of the processor in MHz/100\end{DoxyParams}
+This function initializes a square wave generator using the AVR's 16bit timer. Default duty cycle is 0\% \hypertarget{_square___wave_8c_af083541f6f63f9bf5db4f2ecc14800ab}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle@{Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle}}
+\index{Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle@{Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void Square\_\-Wave16\_\-Set\_\-Duty\_\-Cycle (char {\em dutyCycle})}}
+\label{_square___wave_8c_af083541f6f63f9bf5db4f2ecc14800ab}
+
+
+Set the duty cycle of the square wave. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em dutyCycle}]the desired duty cycle to be set in \%, 0-\/100\end{DoxyParams}
+This function sets the duty cycle for the square wave being generated by the 16bit timer. \hypertarget{_square___wave_8c_a8922e82db0ec93238b8cd21400aed72d}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!Square\_\-Wave16\_\-Set\_\-Freq@{Square\_\-Wave16\_\-Set\_\-Freq}}
+\index{Square\_\-Wave16\_\-Set\_\-Freq@{Square\_\-Wave16\_\-Set\_\-Freq}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{Square\_\-Wave16\_\-Set\_\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Square\_\-Wave16\_\-Set\_\-Freq (unsigned int {\em frequency}, \/  unsigned int {\em fclk})}}
+\label{_square___wave_8c_a8922e82db0ec93238b8cd21400aed72d}
+
+
+Set the frequency of the square wave. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em frequency}]Desired frequency to be set \item[\mbox{$\leftarrow$} {\em fclk}]Base clock rate\end{DoxyParams}
+This function sets the frequency for the square wave being generated by the 16bit timer. \hypertarget{_square___wave_8c_a15232da08d45d1dbbba802686a4139bf}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!Timer16\_\-Initialize@{Timer16\_\-Initialize}}
+\index{Timer16\_\-Initialize@{Timer16\_\-Initialize}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{Timer16\_\-Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Timer16\_\-Initialize (unsigned int {\em frequency}, \/  unsigned int {\em fclk})}}
+\label{_square___wave_8c_a15232da08d45d1dbbba802686a4139bf}
+
+
+Initialize a 16bit timer. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em frequency}]the desired frequency in Hz \item[\mbox{$\leftarrow$} {\em fclk}]the base clock of the processor in MHz/100\end{DoxyParams}
+This function initializes a 16bit timer utilizing OCR1A for the TOP value \hypertarget{_square___wave_8c_a2d293a6de5a7239cdad5eb7273cbe98f}{
+\index{Square\_\-Wave.c@{Square\_\-Wave.c}!Timer16\_\-Set\_\-Freq@{Timer16\_\-Set\_\-Freq}}
+\index{Timer16\_\-Set\_\-Freq@{Timer16\_\-Set\_\-Freq}!Square_Wave.c@{Square\_\-Wave.c}}
+\subsubsection[{Timer16\_\-Set\_\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Timer16\_\-Set\_\-Freq (unsigned int {\em frequency}, \/  unsigned int {\em fclk})}}
+\label{_square___wave_8c_a2d293a6de5a7239cdad5eb7273cbe98f}
+
+
+Set the frequency of the timer. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em frequency}]Desired frequency to be set \item[\mbox{$\leftarrow$} {\em fclk}]Base clock rate\end{DoxyParams}
+This function sets the frequency for the timer generated by the 16bit timer. 

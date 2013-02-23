@@ -1,0 +1,139 @@
+\hypertarget{_simple___serial_8c}{
+\section{Simple\_\-Serial.c File Reference}
+\label{_simple___serial_8c}\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}}
+}
+
+
+Provide a simple serial protocol utilizing USART0.  
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/delay.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_simple___serial_8c_a6ebe466e477d394ca5bb309b35b6bc39}{FCLK}~18432
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_simple___serial_8c_a14c119d92e2babc3667a7f8679d45613}{Init\_\-Serial\_\-P} (unsigned int baud, unsigned char frameSize, unsigned char stopBits, unsigned char parity)
+\begin{DoxyCompactList}\small\item\em Initialize USART0 for asynchronous serial communications, polling. \item\end{DoxyCompactList}\item 
+char \hyperlink{_simple___serial_8c_aa14c9be399ffca0ef488f27e7c2179a7}{Init\_\-Serial\_\-I} (unsigned int baud, unsigned char frameSize, unsigned char stopBits, unsigned char parity)
+\begin{DoxyCompactList}\small\item\em Initialize USART0 for asynchronous serial communications, interrupts. \item\end{DoxyCompactList}\item 
+char \hyperlink{_simple___serial_8c_a81a5d3f3c6948af1a028de8ac2e120c3}{Serial\_\-Print\_\-Char} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Print a single character to the serial port. \item\end{DoxyCompactList}\item 
+char \hyperlink{_simple___serial_8c_ae123269f79a6a760eea5ae15bbbce446}{Serial\_\-Read\_\-Char} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read a single character from the serial port. \item\end{DoxyCompactList}\item 
+char \hyperlink{_simple___serial_8c_abd8d1916742de9b32d00f5d7e16487cb}{Serial\_\-Print\_\-String} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Print a string of chars to the serial port. \item\end{DoxyCompactList}\item 
+char \hyperlink{_simple___serial_8c_a7673494a2c6fccf946e00867cda2083e}{Serial\_\-Print\_\-Int} (int data, int base)
+\begin{DoxyCompactList}\small\item\em Print an int to the serial port. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provide a simple serial protocol utilizing USART0. This source file contains a library of functions to provide simple serial communications (Char/String out, Char/String in), utilizing either polling or interrupt based transmission handling. It uses a single USART for communications, USART0
+
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+19-\/Jan-\/2009 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with fixed parameters for initialization functions, Print\_\-Char(), Print\_\-String(), Read\_\-Char() 
+
+1.1 Modified initialization functions to allow for adjustable setup parameters. 
+
+1.2 Added Print\_\-Int() 
+\end{DoxyVersion}
+
+
+\subsection{Define Documentation}
+\hypertarget{_simple___serial_8c_a6ebe466e477d394ca5bb309b35b6bc39}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!FCLK@{FCLK}}
+\index{FCLK@{FCLK}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{FCLK}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCLK~18432}}
+\label{_simple___serial_8c_a6ebe466e477d394ca5bb309b35b6bc39}
+clock frequency of the AVR in MHz/100 
+
+\subsection{Function Documentation}
+\hypertarget{_simple___serial_8c_aa14c9be399ffca0ef488f27e7c2179a7}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Init\_\-Serial\_\-I@{Init\_\-Serial\_\-I}}
+\index{Init\_\-Serial\_\-I@{Init\_\-Serial\_\-I}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Init\_\-Serial\_\-I}]{\setlength{\rightskip}{0pt plus 5cm}char Init\_\-Serial\_\-I (unsigned int {\em baud}, \/  unsigned char {\em frameSize}, \/  unsigned char {\em stopBits}, \/  unsigned char {\em parity})}}
+\label{_simple___serial_8c_aa14c9be399ffca0ef488f27e7c2179a7}
+
+
+Initialize USART0 for asynchronous serial communications, interrupts. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em baud}]Baudrate for serial communications \item[\mbox{$\leftarrow$} {\em frameSize}]number of data bits (5-\/9), defaults to 8 if parameter is out of bounds \item[\mbox{$\leftarrow$} {\em stopBits}]number of stop bits (1-\/2), defaults to 1 if parameter is out of bounds \item[\mbox{$\leftarrow$} {\em parity}]1 if even parity is desired, 2 if odd parity is desired, 0 for no parity, defaults to no parity if parameter is out of bounds \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0 if there was still data in RXX/TX buffers, preventing a change to USART parameters
+\end{DoxyReturn}
+This function initializes USART0 for asynchronous serial communications by setting the appropriate enable and control registers In this mode, the RX and TX buffers generate interrupts \hypertarget{_simple___serial_8c_a14c119d92e2babc3667a7f8679d45613}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Init\_\-Serial\_\-P@{Init\_\-Serial\_\-P}}
+\index{Init\_\-Serial\_\-P@{Init\_\-Serial\_\-P}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Init\_\-Serial\_\-P}]{\setlength{\rightskip}{0pt plus 5cm}char Init\_\-Serial\_\-P (unsigned int {\em baud}, \/  unsigned char {\em frameSize}, \/  unsigned char {\em stopBits}, \/  unsigned char {\em parity})}}
+\label{_simple___serial_8c_a14c119d92e2babc3667a7f8679d45613}
+
+
+Initialize USART0 for asynchronous serial communications, polling. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em baud}]Baudrate for serial communications \item[\mbox{$\leftarrow$} {\em frameSize}]number of data bits (5-\/9), defaults to 8 if parameter is out of bounds \item[\mbox{$\leftarrow$} {\em stopBits}]number of stop bits (1-\/2), defaults to 1 if parameter is out of bounds \item[\mbox{$\leftarrow$} {\em parity}]1 if even parity is desired, 2 if odd parity is desired, 0 for no parity, defaults to no parity if parameter is out of bounds \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0 if there was still data in RXX/TX buffers, preventing a change to USART parameters
+\end{DoxyReturn}
+This function initializes USART0 for asynchronous serial communications by setting the appropriate enable and control registers In this mode, the RX and TX buffers do not generate interrupts, and thus must be polled to receive information \hypertarget{_simple___serial_8c_a81a5d3f3c6948af1a028de8ac2e120c3}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Serial\_\-Print\_\-Char@{Serial\_\-Print\_\-Char}}
+\index{Serial\_\-Print\_\-Char@{Serial\_\-Print\_\-Char}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Serial\_\-Print\_\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Serial\_\-Print\_\-Char (unsigned char {\em data})}}
+\label{_simple___serial_8c_a81a5d3f3c6948af1a028de8ac2e120c3}
+
+
+Print a single character to the serial port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]char to be sent to the serial port \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0
+\end{DoxyReturn}
+This function prints a single character to the serial port utilizing USART0 \hypertarget{_simple___serial_8c_a7673494a2c6fccf946e00867cda2083e}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Serial\_\-Print\_\-Int@{Serial\_\-Print\_\-Int}}
+\index{Serial\_\-Print\_\-Int@{Serial\_\-Print\_\-Int}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Serial\_\-Print\_\-Int}]{\setlength{\rightskip}{0pt plus 5cm}char Serial\_\-Print\_\-Int (int {\em data}, \/  int {\em base})}}
+\label{_simple___serial_8c_a7673494a2c6fccf946e00867cda2083e}
+
+
+Print an int to the serial port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]integer to be printed to the serial port \item[\mbox{$\leftarrow$} {\em base}]base to use for int to string conversion (2,10,16, etc) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0
+\end{DoxyReturn}
+This function prints a single int to the serial port utilizing USART0 \hypertarget{_simple___serial_8c_abd8d1916742de9b32d00f5d7e16487cb}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Serial\_\-Print\_\-String@{Serial\_\-Print\_\-String}}
+\index{Serial\_\-Print\_\-String@{Serial\_\-Print\_\-String}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Serial\_\-Print\_\-String}]{\setlength{\rightskip}{0pt plus 5cm}char Serial\_\-Print\_\-String (char $\ast$ {\em string})}}
+\label{_simple___serial_8c_abd8d1916742de9b32d00f5d7e16487cb}
+
+
+Print a string of chars to the serial port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em string$\ast$}]pointer to the location of a null terminated string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0
+\end{DoxyReturn}
+This function reads a single character from the serial port utilizing USART0 \hypertarget{_simple___serial_8c_ae123269f79a6a760eea5ae15bbbce446}{
+\index{Simple\_\-Serial.c@{Simple\_\-Serial.c}!Serial\_\-Read\_\-Char@{Serial\_\-Read\_\-Char}}
+\index{Serial\_\-Read\_\-Char@{Serial\_\-Read\_\-Char}!Simple_Serial.c@{Simple\_\-Serial.c}}
+\subsubsection[{Serial\_\-Read\_\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Serial\_\-Read\_\-Char (unsigned char $\ast$ {\em data})}}
+\label{_simple___serial_8c_ae123269f79a6a760eea5ae15bbbce446}
+
+
+Read a single character from the serial port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data$\ast$}]pointer to the location to score the red byte from the serial port \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0
+\end{DoxyReturn}
+This function reads a single character from the serial port utilizing USART0 

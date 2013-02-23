@@ -1,0 +1,60 @@
+\hypertarget{_datalogging_8c}{
+\section{Datalogging.c File Reference}
+\label{_datalogging_8c}\index{Datalogging.c@{Datalogging.c}}
+}
+
+
+Provide functions for simplifying datalogging.  
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_datalogging_8c_a1a27bc3c68282194156efa36f052f383}{Log\_\-Write} (int data, int $\ast$buffer, int $\ast$buffTop, int $\ast$size)
+\begin{DoxyCompactList}\small\item\em Write data to a buffer. \item\end{DoxyCompactList}\item 
+int \hyperlink{_datalogging_8c_a4b8ae5067c9b1e709c1fc870cc248bd3}{Log\_\-Read} (int $\ast$buffer, int $\ast$buffTop)
+\begin{DoxyCompactList}\small\item\em Read data from a buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provide functions for simplifying datalogging. This source file contains a library of functions to simplify commonly used datalogging operations such as data buffering
+
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22-\/Jan-\/2009 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0: Initial version with \hyperlink{_datalogging_8c_a1a27bc3c68282194156efa36f052f383}{Log\_\-Write()} and \hyperlink{_datalogging_8c_a4b8ae5067c9b1e709c1fc870cc248bd3}{Log\_\-Read()} to maintain data buffers 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_datalogging_8c_a4b8ae5067c9b1e709c1fc870cc248bd3}{
+\index{Datalogging.c@{Datalogging.c}!Log\_\-Read@{Log\_\-Read}}
+\index{Log\_\-Read@{Log\_\-Read}!Datalogging.c@{Datalogging.c}}
+\subsubsection[{Log\_\-Read}]{\setlength{\rightskip}{0pt plus 5cm}int Log\_\-Read (int $\ast$ {\em buffer}, \/  int $\ast$ {\em buffTop})}}
+\label{_datalogging_8c_a4b8ae5067c9b1e709c1fc870cc248bd3}
+
+
+Read data from a buffer. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$buffer}]pointer to a buffer to hold the data \item[\mbox{$\leftarrow$} {\em $\ast$buffTop}]pointer to a variable that will hold the current position of data in the buffer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer value on top of the buffer
+\end{DoxyReturn}
+This function reads data from a buffer. It returns the value that is on top of a buffer, and automatically de-\/increments the buffer position. If the bottom of the buffer is reached, it will output the value on the bottom of the buffer if future calls are made without writing new data to the buffer. \hypertarget{_datalogging_8c_a1a27bc3c68282194156efa36f052f383}{
+\index{Datalogging.c@{Datalogging.c}!Log\_\-Write@{Log\_\-Write}}
+\index{Log\_\-Write@{Log\_\-Write}!Datalogging.c@{Datalogging.c}}
+\subsubsection[{Log\_\-Write}]{\setlength{\rightskip}{0pt plus 5cm}char Log\_\-Write (int {\em data}, \/  int $\ast$ {\em buffer}, \/  int $\ast$ {\em buffTop}, \/  int $\ast$ {\em size})}}
+\label{_datalogging_8c_a1a27bc3c68282194156efa36f052f383}
+
+
+Write data to a buffer. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]data to be written to the buffer \item[\mbox{$\leftarrow$} {\em $\ast$buffer}]pointer to a buffer to hold the data \item[\mbox{$\leftarrow$} {\em $\ast$buffTop}]pointer to a variable that will hold the current position of data in the buffer \item[\mbox{$\leftarrow$} {\em $\ast$size}]pointer to a variable that has the maximum size of the buffer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if success, else 0 if there is no more room in the buffer
+\end{DoxyReturn}
+This function writes an int of data onto a buffer stack. It will return 1 if it successfully writes to the buffer, or it will return 0 if the maximum size of the buffer has been reached. It does NOT overwrite the last value in the buffer; it discards the data if there is no more room in the buffer. Also, care must be taken that nothing outside the function writes to the values stored in $\ast$buffTop or $\ast$size, as this will cause data errors and unexpected results. $\ast$buffTop is updated by this function automatically 

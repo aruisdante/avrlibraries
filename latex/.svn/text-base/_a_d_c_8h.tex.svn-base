@@ -1,0 +1,124 @@
+\hypertarget{_a_d_c_8h}{
+\section{ADC.h File Reference}
+\label{_a_d_c_8h}\index{ADC.h@{ADC.h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor}
+\begin{DoxyCompactList}\small\item\em this strcut defines an ADC Sensor object \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_a_d_c_8h_a1fc5dc60c898bd62131a26913b00b52c}{ADC\_\-Init\_\-P} ()
+\begin{DoxyCompactList}\small\item\em Initialize ADC for polling use. \item\end{DoxyCompactList}\item 
+int \hyperlink{_a_d_c_8h_a1a6303ce5384699e9b364a965321d8f1}{ADC\_\-Get\_\-Value} (unsigned char channel)
+\begin{DoxyCompactList}\small\item\em Take a single sample from the ADC. \item\end{DoxyCompactList}\item 
+int \hyperlink{_a_d_c_8h_a6e947a21684bc9f0c10173c3724ac269}{ADC\_\-Calc\_\-Volts} (int ADCValue, int VRef)
+\begin{DoxyCompactList}\small\item\em this function converts raw ADC values into millivolts for a given Vref. \item\end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} \hyperlink{_a_d_c_8h_a9c26d35a0e31d511083a3d025810a2ed}{ADC\_\-Sensor\_\-Construct} (char $\ast$name, unsigned char channel, int valueAtMax, int valueAtMin)
+\begin{DoxyCompactList}\small\item\em this function constructs an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} struct \item\end{DoxyCompactList}\item 
+int \hyperlink{_a_d_c_8h_adaaea74bff83da7bf39d77475804bda7}{ADC\_\-Sensor\_\-Calc\_\-Value} (struct \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} $\ast$\hyperlink{_lab1___demos_8c_ad2c79e7569cbb6bbd9a5632a509151f0}{sensor}, int ADCValue)
+\begin{DoxyCompactList}\small\item\em this function calculates the engineering unit value of a sensor reading in ADC values \item\end{DoxyCompactList}\item 
+int \hyperlink{_a_d_c_8h_aed41c8cccc52768c0e77c8533370be81}{ADC\_\-MCP3204\_\-Get\_\-Value} (unsigned char channel, unsigned char justify)
+\begin{DoxyCompactList}\small\item\em Reads a value from the MCP3024 from the specified channel. \item\end{DoxyCompactList}\item 
+int \hyperlink{_a_d_c_8h_a2cc419b2f4d703bc7933b27bd159f409}{ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs} (int ADCVal, int VRef)
+\begin{DoxyCompactList}\small\item\em Converts a 12bit ADC value to 100ths of a G. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyDate}{Date}
+Jan 22, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_a_d_c_8h_a6e947a21684bc9f0c10173c3724ac269}{
+\index{ADC.h@{ADC.h}!ADC\_\-Calc\_\-Volts@{ADC\_\-Calc\_\-Volts}}
+\index{ADC\_\-Calc\_\-Volts@{ADC\_\-Calc\_\-Volts}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-Calc\_\-Volts}]{\setlength{\rightskip}{0pt plus 5cm}int ADC\_\-Calc\_\-Volts (int {\em ADCValue}, \/  int {\em VRef})}}
+\label{_a_d_c_8h_a6e947a21684bc9f0c10173c3724ac269}
+
+
+this function converts raw ADC values into millivolts for a given Vref. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ADCValue}]the 10-\/bit value returned by the ADC \item[\mbox{$\leftarrow$} {\em VRef}]the reference voltage (in mV) used by the ADC \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input voltage in millivolts
+\end{DoxyReturn}
+This function calculates the input voltage based on ADC value and Vref. \hypertarget{_a_d_c_8h_a1a6303ce5384699e9b364a965321d8f1}{
+\index{ADC.h@{ADC.h}!ADC\_\-Get\_\-Value@{ADC\_\-Get\_\-Value}}
+\index{ADC\_\-Get\_\-Value@{ADC\_\-Get\_\-Value}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-Get\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int ADC\_\-Get\_\-Value (unsigned char {\em channel})}}
+\label{_a_d_c_8h_a1a6303ce5384699e9b364a965321d8f1}
+
+
+Take a single sample from the ADC. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channel}]channel number (0-\/7) to read the ADC value from. Defaults to 0 if out of bounds \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value on the specified ADC channel
+\end{DoxyReturn}
+This function takes a single sample from a specified ADC channel using a polling mechanism to determine when the sample is ready \hypertarget{_a_d_c_8h_a1fc5dc60c898bd62131a26913b00b52c}{
+\index{ADC.h@{ADC.h}!ADC\_\-Init\_\-P@{ADC\_\-Init\_\-P}}
+\index{ADC\_\-Init\_\-P@{ADC\_\-Init\_\-P}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-Init\_\-P}]{\setlength{\rightskip}{0pt plus 5cm}void ADC\_\-Init\_\-P ()}}
+\label{_a_d_c_8h_a1fc5dc60c898bd62131a26913b00b52c}
+
+
+Initialize ADC for polling use. \begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+This function initializes the ADC to be read using a polling system \hypertarget{_a_d_c_8h_a2cc419b2f4d703bc7933b27bd159f409}{
+\index{ADC.h@{ADC.h}!ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs@{ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs}}
+\index{ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs@{ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs}]{\setlength{\rightskip}{0pt plus 5cm}int ADC\_\-MCP3204\_\-Count\_\-to\_\-Gs (int {\em ADCVal}, \/  int {\em VRef})}}
+\label{_a_d_c_8h_a2cc419b2f4d703bc7933b27bd159f409}
+
+
+Converts a 12bit ADC value to 100ths of a G. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ADCVal}]12bit ADC value to convert \item[\mbox{$\leftarrow$} {\em VRef}]The VRef value from the ADC \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a value in 100ths of a G
+\end{DoxyReturn}
+This function converts the 12bit ADC value from the MCP3024 on the Parallax accelerometer board and converts it into 100ths of a G. \hypertarget{_a_d_c_8h_aed41c8cccc52768c0e77c8533370be81}{
+\index{ADC.h@{ADC.h}!ADC\_\-MCP3204\_\-Get\_\-Value@{ADC\_\-MCP3204\_\-Get\_\-Value}}
+\index{ADC\_\-MCP3204\_\-Get\_\-Value@{ADC\_\-MCP3204\_\-Get\_\-Value}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-MCP3204\_\-Get\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int ADC\_\-MCP3204\_\-Get\_\-Value (unsigned char {\em channel}, \/  unsigned char {\em justify})}}
+\label{_a_d_c_8h_aed41c8cccc52768c0e77c8533370be81}
+
+
+Reads a value from the MCP3024 from the specified channel. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channel}]ADC channel to read from \item[\mbox{$\leftarrow$} {\em justify}]0 if the returned 12bit value should be right justified, 1 if it should be left justified \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 12bit value from the ADC
+\end{DoxyReturn}
+This function uses bit banged SPI to communicate with the MCP3024 ADC. It gets a measurement from the requested channel and, if desired, left justifies it. \hypertarget{_a_d_c_8h_adaaea74bff83da7bf39d77475804bda7}{
+\index{ADC.h@{ADC.h}!ADC\_\-Sensor\_\-Calc\_\-Value@{ADC\_\-Sensor\_\-Calc\_\-Value}}
+\index{ADC\_\-Sensor\_\-Calc\_\-Value@{ADC\_\-Sensor\_\-Calc\_\-Value}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-Sensor\_\-Calc\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int ADC\_\-Sensor\_\-Calc\_\-Value (struct {\bf ADC\_\-Sensor} $\ast$ {\em sensor}, \/  int {\em ADCValue})}}
+\label{_a_d_c_8h_adaaea74bff83da7bf39d77475804bda7}
+
+
+this function calculates the engineering unit value of a sensor reading in ADC values 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$sensor}]pointer to an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} \item[\mbox{$\leftarrow$} {\em ADCValue}]returned by the ADC (0-\/1024) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the sensor in engineering units (multiplied by a scale factor of 100 to allow for decimal values)
+\end{DoxyReturn}
+This function constructs an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} using the passed values. It returns an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} struct which is used in other ADC functions to calculate engineering values from raw ADC units \hypertarget{_a_d_c_8h_a9c26d35a0e31d511083a3d025810a2ed}{
+\index{ADC.h@{ADC.h}!ADC\_\-Sensor\_\-Construct@{ADC\_\-Sensor\_\-Construct}}
+\index{ADC\_\-Sensor\_\-Construct@{ADC\_\-Sensor\_\-Construct}!ADC.h@{ADC.h}}
+\subsubsection[{ADC\_\-Sensor\_\-Construct}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ADC\_\-Sensor} ADC\_\-Sensor\_\-Construct (char $\ast$ {\em name}, \/  unsigned char {\em channel}, \/  int {\em valueAtMax}, \/  int {\em valueAtMin})\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{_a_d_c_8h_a9c26d35a0e31d511083a3d025810a2ed}
+
+
+this function constructs an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} struct 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$name}]pointer to an array of chars containing the name of the sensor. Max length is 15 including null terminator \item[\mbox{$\leftarrow$} {\em channel}]channel number that the sensor is on (0-\/7) \item[\mbox{$\leftarrow$} {\em valueAtMax}]the value (in engineering units, E.G. PSI) of the sensor at Vin=Vref \item[\mbox{$\leftarrow$} {\em valueAtMin}]the value (in engineering units, E.G. PSI) of the sensor at Vin=Ground\end{DoxyParams}
+This function constructs an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} using the passed values. It returns an \hyperlink{struct_a_d_c___sensor}{ADC\_\-Sensor} struct which is used in other ADC functions to calculate engineering values from raw ADC units 

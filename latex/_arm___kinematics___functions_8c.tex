@@ -1,0 +1,34 @@
+\hypertarget{_arm___kinematics___functions_8c}{
+\section{Arm\_\-Kinematics\_\-Functions.c File Reference}
+\label{_arm___kinematics___functions_8c}\index{Arm\_\-Kinematics\_\-Functions.c@{Arm\_\-Kinematics\_\-Functions.c}}
+}
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_arm___kinematics___functions_8c_aef08c3b201e6d52da1f3700ff35a3e70}{AKF\_\-2link\_\-Forward} (int $\ast$jointAngle0, int $\ast$jointAngle1, int $\ast$linkLength0, int $\ast$linkLength1, int $\ast$xcoord, int $\ast$ycoord)
+\begin{DoxyCompactList}\small\item\em Calculates the forward kinematics of a 2 DOF arm. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyDate}{Date}
+Feb 7, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_arm___kinematics___functions_8c_aef08c3b201e6d52da1f3700ff35a3e70}{
+\index{Arm\_\-Kinematics\_\-Functions.c@{Arm\_\-Kinematics\_\-Functions.c}!AKF\_\-2link\_\-Forward@{AKF\_\-2link\_\-Forward}}
+\index{AKF\_\-2link\_\-Forward@{AKF\_\-2link\_\-Forward}!Arm_Kinematics_Functions.c@{Arm\_\-Kinematics\_\-Functions.c}}
+\subsubsection[{AKF\_\-2link\_\-Forward}]{\setlength{\rightskip}{0pt plus 5cm}char AKF\_\-2link\_\-Forward (int $\ast$ {\em jointAngle0}, \/  int $\ast$ {\em jointAngle1}, \/  int $\ast$ {\em linkLength0}, \/  int $\ast$ {\em linkLength1}, \/  int $\ast$ {\em xcoord}, \/  int $\ast$ {\em ycoord})}}
+\label{_arm___kinematics___functions_8c_aef08c3b201e6d52da1f3700ff35a3e70}
+
+
+Calculates the forward kinematics of a 2 DOF arm. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$jointAngle0}]Pointer to the Angle between link 0 and horizontal \item[\mbox{$\leftarrow$} {\em $\ast$jointAngle1}]Pointer to the Angle between link 1 and perpendicular to link 0 \item[\mbox{$\leftarrow$} {\em $\ast$linkLength0}]Pointer to the Length of link 0 \item[\mbox{$\leftarrow$} {\em $\ast$linkLength1}]Pointer to the Length of link 1 \item[\mbox{$\rightarrow$} {\em $\ast$xcoord}]Pointer to a location to write the X coordinate to \item[\mbox{$\rightarrow$} {\em $\ast$ycoord}]Pointer to a location to write the Y coordinate to \end{DoxyParams}

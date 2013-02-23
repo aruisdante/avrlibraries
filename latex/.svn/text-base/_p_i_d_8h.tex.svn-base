@@ -1,0 +1,123 @@
+\hypertarget{_p_i_d_8h}{
+\section{PID.h File Reference}
+\label{_p_i_d_8h}\index{PID.h@{PID.h}}
+}
+
+
+Header for library of functions for PID control.  
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL}
+\begin{DoxyCompactList}\small\item\em this strcut defines a \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} object \item\end{DoxyCompactList}\item 
+struct \hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p_i_d_8h_ac666fb194d5951dcc845a122d01537d3}{UPDATEFREQ}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_p_i_d_8h_aa1119e5ecd1e98ca065e95119574fc05}{PID\_\-Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes PID control. \item\end{DoxyCompactList}\item 
+\hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} $\ast$ \hyperlink{_p_i_d_8h_a02244c901f74e20799bfcbc68dd71042}{PID\_\-Add\_\-Channel} (int $\ast$target, int $\ast$current, int $\ast$correctionValue, int $\ast$LMDVal, int Kp, int Ki, int Kd, char spool)
+\begin{DoxyCompactList}\small\item\em Adds a PID channel to the PID controller. \item\end{DoxyCompactList}\item 
+\hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} $\ast$ \hyperlink{_p_i_d_8h_a82cfc28fad26c6af7b6d5b2f044a78b5}{Add\_\-Pot\_\-Angle} (int valMax, int angMax, int valMin, int angMin, char $\ast$name, char channel)
+\begin{DoxyCompactList}\small\item\em This function creates a \hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} struct. \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8h_ac05daeebea73d0c1095389331b55eeae}{Pot\_\-To\_\-Degrees} (int potVal, int channel)
+\begin{DoxyCompactList}\small\item\em Converts a 10bit pot value to an angle in degrees. \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8h_aa3a17ec06666bff62c3227cfc8d9d4aa}{Degrees\_\-To\_\-Pot} (int degrees, int channel)
+\begin{DoxyCompactList}\small\item\em Converts an angle in degrees to a 10bit pot value. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for library of functions for PID control. \begin{DoxyDate}{Date}
+Feb 2, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 First implementation of the \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} struct 
+\end{DoxyVersion}
+
+
+\subsection{Define Documentation}
+\hypertarget{_p_i_d_8h_ac666fb194d5951dcc845a122d01537d3}{
+\index{PID.h@{PID.h}!UPDATEFREQ@{UPDATEFREQ}}
+\index{UPDATEFREQ@{UPDATEFREQ}!PID.h@{PID.h}}
+\subsubsection[{UPDATEFREQ}]{\setlength{\rightskip}{0pt plus 5cm}\#define UPDATEFREQ~100}}
+\label{_p_i_d_8h_ac666fb194d5951dcc845a122d01537d3}
+update frequency for the PID controller 
+
+\subsection{Function Documentation}
+\hypertarget{_p_i_d_8h_a82cfc28fad26c6af7b6d5b2f044a78b5}{
+\index{PID.h@{PID.h}!Add\_\-Pot\_\-Angle@{Add\_\-Pot\_\-Angle}}
+\index{Add\_\-Pot\_\-Angle@{Add\_\-Pot\_\-Angle}!PID.h@{PID.h}}
+\subsubsection[{Add\_\-Pot\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf POT\_\-ANGLE}$\ast$ Add\_\-Pot\_\-Angle (int {\em valMax}, \/  int {\em angMax}, \/  int {\em valMin}, \/  int {\em angMin}, \/  char $\ast$ {\em name}, \/  char {\em channel})}}
+\label{_p_i_d_8h_a82cfc28fad26c6af7b6d5b2f044a78b5}
+
+
+This function creates a \hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} struct. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em valMax}]ADC value at maximum angle \item[\mbox{$\leftarrow$} {\em angMax}]Angle at maximum ADC value \item[\mbox{$\leftarrow$} {\em valMin}]ADC value at minimum angle \item[\mbox{$\leftarrow$} {\em angMin}]Angle at minimum ADC value \item[\mbox{$\leftarrow$} {\em $\ast$name}]pointer to an array of chars containing the name of the angle (max 15 chars) \item[\mbox{$\leftarrow$} {\em channel}]ADC channel that the pot is on \end{DoxyParams}
+\hypertarget{_p_i_d_8h_aa3a17ec06666bff62c3227cfc8d9d4aa}{
+\index{PID.h@{PID.h}!Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}}
+\index{Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}!PID.h@{PID.h}}
+\subsubsection[{Degrees\_\-To\_\-Pot}]{\setlength{\rightskip}{0pt plus 5cm}int Degrees\_\-To\_\-Pot (int {\em degrees}, \/  int {\em channel})}}
+\label{_p_i_d_8h_aa3a17ec06666bff62c3227cfc8d9d4aa}
+
+
+Converts an angle in degrees to a 10bit pot value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value 
+\end{DoxyReturn}
+\hypertarget{_p_i_d_8h_a02244c901f74e20799bfcbc68dd71042}{
+\index{PID.h@{PID.h}!PID\_\-Add\_\-Channel@{PID\_\-Add\_\-Channel}}
+\index{PID\_\-Add\_\-Channel@{PID\_\-Add\_\-Channel}!PID.h@{PID.h}}
+\subsubsection[{PID\_\-Add\_\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PID\_\-CHANNEL}$\ast$ PID\_\-Add\_\-Channel (int $\ast$ {\em target}, \/  int $\ast$ {\em current}, \/  int $\ast$ {\em correctionValue}, \/  int $\ast$ {\em LMDVal}, \/  int {\em Kp}, \/  int {\em Ki}, \/  int {\em Kd}, \/  char {\em spool})}}
+\label{_p_i_d_8h_a02244c901f74e20799bfcbc68dd71042}
+
+
+Adds a PID channel to the PID controller. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$target}]pointer to the target value for this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$current}]pointer to the current value for this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$correctionValue}]pointer to a location to write the correction value from this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$LMDVal}]pointer to a location to write the requested LMD output voltage to. \item[\mbox{$\leftarrow$} {\em Kp}]Proportional gain constant \item[\mbox{$\leftarrow$} {\em Ki}]Integral gain constant \item[\mbox{$\leftarrow$} {\em Kd}]Derivative gain constant \item[\mbox{$\leftarrow$} {\em spool}]Cap value for the Integral element of the PID loop to prevent it from dominating the system \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the added PID channel
+\end{DoxyReturn}
+This function adds a PID channel to the PID controller. It is automatically handled from the moment it is added. Communication with the controller is handled by updating the input communication vars, $\ast$target and $\ast$current. Write to target to change the value that the PID loop seeks, and update current as often as possible to ensure that the PID loop has accurate current state information. The output states of the PID loop can be checked by reading the contents of $\ast$correctionVal and $\ast$LMDVal \hypertarget{_p_i_d_8h_aa1119e5ecd1e98ca065e95119574fc05}{
+\index{PID.h@{PID.h}!PID\_\-Initialize@{PID\_\-Initialize}}
+\index{PID\_\-Initialize@{PID\_\-Initialize}!PID.h@{PID.h}}
+\subsubsection[{PID\_\-Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void PID\_\-Initialize ()}}
+\label{_p_i_d_8h_aa1119e5ecd1e98ca065e95119574fc05}
+
+
+Initializes PID control. This function initializes PID by setting up the 8bit timer to refresh at a set frequency. The actual PID calculations are called from the ISR for this timer \hypertarget{_p_i_d_8h_ac05daeebea73d0c1095389331b55eeae}{
+\index{PID.h@{PID.h}!Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}}
+\index{Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}!PID.h@{PID.h}}
+\subsubsection[{Pot\_\-To\_\-Degrees}]{\setlength{\rightskip}{0pt plus 5cm}int Pot\_\-To\_\-Degrees (int {\em potVal}, \/  int {\em channel})}}
+\label{_p_i_d_8h_ac05daeebea73d0c1095389331b55eeae}
+
+
+Converts a 10bit pot value to an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees 
+\end{DoxyReturn}

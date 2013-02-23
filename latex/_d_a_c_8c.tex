@@ -1,0 +1,111 @@
+\hypertarget{_d_a_c_8c}{
+\section{DAC.c File Reference}
+\label{_d_a_c_8c}\index{DAC.c@{DAC.c}}
+}
+
+
+Library of DAC functions.  
+{\ttfamily \#include \char`\"{}DAC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}SPI.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_a_c_8c_a568ff8a9d5da9d1925fb5fc9173f402f}{LD1}~7
+\item 
+\#define \hyperlink{_d_a_c_8c_a7469ccc54535e28997e36314106956ec}{LD0}~6
+\item 
+\#define \hyperlink{_d_a_c_8c_a7fc3ebaf23e24324e05c158644703067}{SEL1}~5
+\item 
+\#define \hyperlink{_d_a_c_8c_aa3b532dc1dfcb8b6683540476e7589e9}{SEL0}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_d_a_c_8c_af06b4374d4149c45716d14ed2fe6fabc}{
+char \hyperlink{_d_a_c_8c_af06b4374d4149c45716d14ed2fe6fabc}{DAC\_\-Initilize} ()}
+\label{_d_a_c_8c_af06b4374d4149c45716d14ed2fe6fabc}
+
+\begin{DoxyCompactList}\small\item\em Initializes the SPI bus for use with the DAC. \item\end{DoxyCompactList}\item 
+int \hyperlink{_d_a_c_8c_a520fb7f4177905fe11178b2dba8507da}{DAC\_\-Volts\_\-To\_\-DACcount} (int mVolts)
+\begin{DoxyCompactList}\small\item\em Convert a voltage in mV to a 10bit DAC value. \item\end{DoxyCompactList}\item 
+char \hyperlink{_d_a_c_8c_a5d77f4b35cf7f4714fbc1bb8ac572e5a}{DAC\_\-Set\_\-Value} (int DACcounts, unsigned char channel)
+\begin{DoxyCompactList}\small\item\em Sets a DAC channel to a specified value. \item\end{DoxyCompactList}\item 
+char \hyperlink{_d_a_c_8c_a73f4e7462a852316b8e0767a73f89ceb}{DAC\_\-Set\_\-LMD\_\-Output} (int mVolts, char channel)
+\begin{DoxyCompactList}\small\item\em Sets a specified LMD output to a specified voltage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library of DAC functions. This source file contains a library of functions for utilizing the DAC on the WPI daughter board
+
+\begin{DoxyDate}{Date}
+Jan 27, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+: Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with DAC\_\-Initialize(), DAC\_\-Volts\_\-to\_\-DACcoun(), \hyperlink{_d_a_c_8c_a5d77f4b35cf7f4714fbc1bb8ac572e5a}{DAC\_\-Set\_\-Value()}, and \hyperlink{_d_a_c_8c_a73f4e7462a852316b8e0767a73f89ceb}{DAC\_\-Set\_\-LMD\_\-Output()} 
+
+1.1 Modified all functions to improve functionality. Also made all functions except for DAC\_\-Initialize() and DAC\_\-Set\_\-LMD\_\-Output 'private' by excluding a prototype in the header 
+\end{DoxyVersion}
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]Once DAC LMD output functionality is completely working, re-\/write functions to use a DAC class to improve hardware abstraction \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{_d_a_c_8c_a7469ccc54535e28997e36314106956ec}{
+\index{DAC.c@{DAC.c}!LD0@{LD0}}
+\index{LD0@{LD0}!DAC.c@{DAC.c}}
+\subsubsection[{LD0}]{\setlength{\rightskip}{0pt plus 5cm}\#define LD0~6}}
+\label{_d_a_c_8c_a7469ccc54535e28997e36314106956ec}
+Bit number for the LD0 bit in the DAC control word \hypertarget{_d_a_c_8c_a568ff8a9d5da9d1925fb5fc9173f402f}{
+\index{DAC.c@{DAC.c}!LD1@{LD1}}
+\index{LD1@{LD1}!DAC.c@{DAC.c}}
+\subsubsection[{LD1}]{\setlength{\rightskip}{0pt plus 5cm}\#define LD1~7}}
+\label{_d_a_c_8c_a568ff8a9d5da9d1925fb5fc9173f402f}
+Bit number for the LD1 bit in the DAC control word \hypertarget{_d_a_c_8c_aa3b532dc1dfcb8b6683540476e7589e9}{
+\index{DAC.c@{DAC.c}!SEL0@{SEL0}}
+\index{SEL0@{SEL0}!DAC.c@{DAC.c}}
+\subsubsection[{SEL0}]{\setlength{\rightskip}{0pt plus 5cm}\#define SEL0~4}}
+\label{_d_a_c_8c_aa3b532dc1dfcb8b6683540476e7589e9}
+Bit number for the SEL0 bit in the DAC control word \hypertarget{_d_a_c_8c_a7fc3ebaf23e24324e05c158644703067}{
+\index{DAC.c@{DAC.c}!SEL1@{SEL1}}
+\index{SEL1@{SEL1}!DAC.c@{DAC.c}}
+\subsubsection[{SEL1}]{\setlength{\rightskip}{0pt plus 5cm}\#define SEL1~5}}
+\label{_d_a_c_8c_a7fc3ebaf23e24324e05c158644703067}
+Bit number for the SEL1 bit in the DAC control word 
+
+\subsection{Function Documentation}
+\hypertarget{_d_a_c_8c_a73f4e7462a852316b8e0767a73f89ceb}{
+\index{DAC.c@{DAC.c}!DAC\_\-Set\_\-LMD\_\-Output@{DAC\_\-Set\_\-LMD\_\-Output}}
+\index{DAC\_\-Set\_\-LMD\_\-Output@{DAC\_\-Set\_\-LMD\_\-Output}!DAC.c@{DAC.c}}
+\subsubsection[{DAC\_\-Set\_\-LMD\_\-Output}]{\setlength{\rightskip}{0pt plus 5cm}char DAC\_\-Set\_\-LMD\_\-Output (int {\em mVolts}, \/  char {\em channel})}}
+\label{_d_a_c_8c_a73f4e7462a852316b8e0767a73f89ceb}
+
+
+Sets a specified LMD output to a specified voltage. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em mVolts}]voltage to set the LMD output to, in mV \item[\mbox{$\leftarrow$} {\em channel}]Channel to adjust the output of \end{DoxyParams}
+\hypertarget{_d_a_c_8c_a5d77f4b35cf7f4714fbc1bb8ac572e5a}{
+\index{DAC.c@{DAC.c}!DAC\_\-Set\_\-Value@{DAC\_\-Set\_\-Value}}
+\index{DAC\_\-Set\_\-Value@{DAC\_\-Set\_\-Value}!DAC.c@{DAC.c}}
+\subsubsection[{DAC\_\-Set\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}char DAC\_\-Set\_\-Value (int {\em DACcounts}, \/  unsigned char {\em channel})}}
+\label{_d_a_c_8c_a5d77f4b35cf7f4714fbc1bb8ac572e5a}
+
+
+Sets a DAC channel to a specified value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DACcounts}]10bit value to set the DAC output to \item[\mbox{$\leftarrow$} {\em channel}]Channel to adjust the output of\end{DoxyParams}
+This function sets a specified DAC channel to a new output value \hypertarget{_d_a_c_8c_a520fb7f4177905fe11178b2dba8507da}{
+\index{DAC.c@{DAC.c}!DAC\_\-Volts\_\-To\_\-DACcount@{DAC\_\-Volts\_\-To\_\-DACcount}}
+\index{DAC\_\-Volts\_\-To\_\-DACcount@{DAC\_\-Volts\_\-To\_\-DACcount}!DAC.c@{DAC.c}}
+\subsubsection[{DAC\_\-Volts\_\-To\_\-DACcount}]{\setlength{\rightskip}{0pt plus 5cm}int DAC\_\-Volts\_\-To\_\-DACcount (int {\em mVolts})}}
+\label{_d_a_c_8c_a520fb7f4177905fe11178b2dba8507da}
+
+
+Convert a voltage in mV to a 10bit DAC value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em mVolts}]Voltage in mV\end{DoxyParams}
+This function takes a voltage in mV and converts it into a 10bit value that corresponds to that voltage on the DAC 

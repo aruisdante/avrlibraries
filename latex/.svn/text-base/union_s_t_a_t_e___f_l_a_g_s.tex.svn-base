@@ -1,0 +1,43 @@
+\hypertarget{union_s_t_a_t_e___f_l_a_g_s}{
+\section{STATE\_\-FLAGS Union Reference}
+\label{union_s_t_a_t_e___f_l_a_g_s}\index{STATE\_\-FLAGS@{STATE\_\-FLAGS}}
+}
+
+
+Union for holding flags about the current state of the system.  
+
+
+{\ttfamily \#include $<$Final\_\-Project.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{union_s_t_a_t_e___f_l_a_g_s_ab6b1161669700460ffd46e0c15564d62}{
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned {\bfseries \_MAGON}: 1\\
+\>unsigned {\bfseries \_WEIGH}: 1\\
+\>unsigned {\bfseries \_OBDET}: 1\\
+\>unsigned {\bfseries \_RES}: 5\\
+\}; }
+\label{union_s_t_a_t_e___f_l_a_g_s_ab6b1161669700460ffd46e0c15564d62}
+\\
+
+\end{tabbing}\item 
+\hypertarget{union_s_t_a_t_e___f_l_a_g_s_a58f1a49e2af6fac7351d69c396fbdc16}{
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned char {\bfseries \_FLAGS}\\
+\}; }
+\label{union_s_t_a_t_e___f_l_a_g_s_a58f1a49e2af6fac7351d69c396fbdc16}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Union for holding flags about the current state of the system. 
+
+The documentation for this union was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_final___project_8h}{Final\_\-Project.h}\end{DoxyCompactItemize}

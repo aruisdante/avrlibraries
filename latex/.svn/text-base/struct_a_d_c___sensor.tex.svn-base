@@ -1,0 +1,58 @@
+\hypertarget{struct_a_d_c___sensor}{
+\section{ADC\_\-Sensor Struct Reference}
+\label{struct_a_d_c___sensor}\index{ADC\_\-Sensor@{ADC\_\-Sensor}}
+}
+
+
+this strcut defines an ADC Sensor object  
+
+
+{\ttfamily \#include $<$ADC.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{struct_a_d_c___sensor_aa251579e2c5f40c3979c8522d32d46f4}{name} \mbox{[}15\mbox{]}
+\item 
+unsigned char \hyperlink{struct_a_d_c___sensor_a8a718da23e0b8ec35052dea3b259a49d}{channel}
+\item 
+int \hyperlink{struct_a_d_c___sensor_af42dc82fb3d5125cbbb2abc3afe1f952}{valueAtMax}
+\item 
+int \hyperlink{struct_a_d_c___sensor_a3fe1c29ca3fe44a7e9cbefe7e27685a6}{valueAtMin}
+\item 
+int \hyperlink{struct_a_d_c___sensor_a12290b13cfe30f796cdfdf6f4bc0d71a}{scaleFactor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this strcut defines an ADC Sensor object 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_d_c___sensor_a8a718da23e0b8ec35052dea3b259a49d}{
+\index{ADC\_\-Sensor@{ADC\_\-Sensor}!channel@{channel}}
+\index{channel@{channel}!ADC_Sensor@{ADC\_\-Sensor}}
+\subsubsection[{channel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf ADC\_\-Sensor::channel}}}
+\label{struct_a_d_c___sensor_a8a718da23e0b8ec35052dea3b259a49d}
+channel number the ADC sensor is on \hypertarget{struct_a_d_c___sensor_aa251579e2c5f40c3979c8522d32d46f4}{
+\index{ADC\_\-Sensor@{ADC\_\-Sensor}!name@{name}}
+\index{name@{name}!ADC_Sensor@{ADC\_\-Sensor}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ADC\_\-Sensor::name}\mbox{[}15\mbox{]}}}
+\label{struct_a_d_c___sensor_aa251579e2c5f40c3979c8522d32d46f4}
+name array of chars for storing the sensor name \hypertarget{struct_a_d_c___sensor_a12290b13cfe30f796cdfdf6f4bc0d71a}{
+\index{ADC\_\-Sensor@{ADC\_\-Sensor}!scaleFactor@{scaleFactor}}
+\index{scaleFactor@{scaleFactor}!ADC_Sensor@{ADC\_\-Sensor}}
+\subsubsection[{scaleFactor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ADC\_\-Sensor::scaleFactor}}}
+\label{struct_a_d_c___sensor_a12290b13cfe30f796cdfdf6f4bc0d71a}
+scaleFactor scale factor for converting ADC units to engineering units for the sensor \hypertarget{struct_a_d_c___sensor_af42dc82fb3d5125cbbb2abc3afe1f952}{
+\index{ADC\_\-Sensor@{ADC\_\-Sensor}!valueAtMax@{valueAtMax}}
+\index{valueAtMax@{valueAtMax}!ADC_Sensor@{ADC\_\-Sensor}}
+\subsubsection[{valueAtMax}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ADC\_\-Sensor::valueAtMax}}}
+\label{struct_a_d_c___sensor_af42dc82fb3d5125cbbb2abc3afe1f952}
+valueAtMax value of the ADC sensor in engineering units at Vin=VRef \hypertarget{struct_a_d_c___sensor_a3fe1c29ca3fe44a7e9cbefe7e27685a6}{
+\index{ADC\_\-Sensor@{ADC\_\-Sensor}!valueAtMin@{valueAtMin}}
+\index{valueAtMin@{valueAtMin}!ADC_Sensor@{ADC\_\-Sensor}}
+\subsubsection[{valueAtMin}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ADC\_\-Sensor::valueAtMin}}}
+\label{struct_a_d_c___sensor_a3fe1c29ca3fe44a7e9cbefe7e27685a6}
+valueAtMin value of the ADC sensor in engineering units at Vin=Ground 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_d_c_8h}{ADC.h}\end{DoxyCompactItemize}

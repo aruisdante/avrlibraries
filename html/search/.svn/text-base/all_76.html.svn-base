@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title></title>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="search.css"/>
+<script type="text/javascript" src="search.js"></script>
+</head>
+<body class="SRPage">
+<div id="SRIndex">
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRResult" id="SR_valmax">
+ <div class="SREntry">
+  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../struct_p_o_t___a_n_g_l_e.html#a371a0741ba2cbc5e2135d643dff43c54" target="_parent">valMax</a>
+  <span class="SRScope">POT_ANGLE</span>
+ </div>
+</div>
+<div class="SRResult" id="SR_valmin">
+ <div class="SREntry">
+  <a id="Item1" onkeydown="return searchResults.Nav(event,1)" onkeypress="return searchResults.Nav(event,1)" onkeyup="return searchResults.Nav(event,1)" class="SRSymbol" href="../struct_p_o_t___a_n_g_l_e.html#af96307ff956d6845ecf7443347307471" target="_parent">valMin</a>
+  <span class="SRScope">POT_ANGLE</span>
+ </div>
+</div>
+<div class="SRResult" id="SR_valueatmax">
+ <div class="SREntry">
+  <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../struct_a_d_c___sensor.html#af42dc82fb3d5125cbbb2abc3afe1f952" target="_parent">valueAtMax</a>
+  <span class="SRScope">ADC_Sensor</span>
+ </div>
+</div>
+<div class="SRResult" id="SR_valueatmin">
+ <div class="SREntry">
+  <a id="Item3" onkeydown="return searchResults.Nav(event,3)" onkeypress="return searchResults.Nav(event,3)" onkeyup="return searchResults.Nav(event,3)" class="SRSymbol" href="../struct_a_d_c___sensor.html#a3fe1c29ca3fe44a7e9cbefe7e27685a6" target="_parent">valueAtMin</a>
+  <span class="SRScope">ADC_Sensor</span>
+ </div>
+</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+<script type="text/javascript"><!--
+document.getElementById("Loading").style.display="none";
+document.getElementById("NoMatches").style.display="none";
+var searchResults = new SearchResults("searchResults");
+searchResults.Search();
+--></script>
+</div>
+</body>
+</html>

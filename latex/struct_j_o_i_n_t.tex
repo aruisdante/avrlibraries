@@ -1,0 +1,86 @@
+\hypertarget{struct_j_o_i_n_t}{
+\section{JOINT Struct Reference}
+\label{struct_j_o_i_n_t}\index{JOINT@{JOINT}}
+}
+
+
+this struct contains all of the data needed to track the state of a joint on the EDUarm  
+
+
+{\ttfamily \#include $<$Final\_\-Project.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_j_o_i_n_t_ab3e45b912a70620e12424d9c76af7bd3}{linkLength}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a632c84cd23158d48b57d20feff37fefb}{jointAngle}
+\item 
+int \hyperlink{struct_j_o_i_n_t_ab534acf952f60223602ba978668ec0cd}{xLocal}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a9c9557f89a971fd07fe4e665eaf9f465}{yLocal}
+\item 
+int \hyperlink{struct_j_o_i_n_t_aeee8a1e7094679a6a90e2d6b567836ff}{rsense}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a3fe6ab5a9fb13edf8cc6db2061874432}{targetVal}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a1797da45dbc368f11284f3611a9bcbb9}{currentVal}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a21f9c1b6aa961c3a0398cf69eef04078}{correctionVal}
+\item 
+int \hyperlink{struct_j_o_i_n_t_a82e7035f985b04076a7da208391d61dd}{LMDVal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this struct contains all of the data needed to track the state of a joint on the EDUarm 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_j_o_i_n_t_a21f9c1b6aa961c3a0398cf69eef04078}{
+\index{JOINT@{JOINT}!correctionVal@{correctionVal}}
+\index{correctionVal@{correctionVal}!JOINT@{JOINT}}
+\subsubsection[{correctionVal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::correctionVal}}}
+\label{struct_j_o_i_n_t_a21f9c1b6aa961c3a0398cf69eef04078}
+Correction value for the joint, in arbitrary PID units \hypertarget{struct_j_o_i_n_t_a1797da45dbc368f11284f3611a9bcbb9}{
+\index{JOINT@{JOINT}!currentVal@{currentVal}}
+\index{currentVal@{currentVal}!JOINT@{JOINT}}
+\subsubsection[{currentVal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::currentVal}}}
+\label{struct_j_o_i_n_t_a1797da45dbc368f11284f3611a9bcbb9}
+Current value of the joint, in ADC values \hypertarget{struct_j_o_i_n_t_a632c84cd23158d48b57d20feff37fefb}{
+\index{JOINT@{JOINT}!jointAngle@{jointAngle}}
+\index{jointAngle@{jointAngle}!JOINT@{JOINT}}
+\subsubsection[{jointAngle}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::jointAngle}}}
+\label{struct_j_o_i_n_t_a632c84cd23158d48b57d20feff37fefb}
+Current joint angle, in degrees \hypertarget{struct_j_o_i_n_t_ab3e45b912a70620e12424d9c76af7bd3}{
+\index{JOINT@{JOINT}!linkLength@{linkLength}}
+\index{linkLength@{linkLength}!JOINT@{JOINT}}
+\subsubsection[{linkLength}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::linkLength}}}
+\label{struct_j_o_i_n_t_ab3e45b912a70620e12424d9c76af7bd3}
+Link length (in mm) of the arm link attached to the joint \hypertarget{struct_j_o_i_n_t_a82e7035f985b04076a7da208391d61dd}{
+\index{JOINT@{JOINT}!LMDVal@{LMDVal}}
+\index{LMDVal@{LMDVal}!JOINT@{JOINT}}
+\subsubsection[{LMDVal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::LMDVal}}}
+\label{struct_j_o_i_n_t_a82e7035f985b04076a7da208391d61dd}
+LMD output voltage for the joint, in mV \hypertarget{struct_j_o_i_n_t_aeee8a1e7094679a6a90e2d6b567836ff}{
+\index{JOINT@{JOINT}!rsense@{rsense}}
+\index{rsense@{rsense}!JOINT@{JOINT}}
+\subsubsection[{rsense}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::rsense}}}
+\label{struct_j_o_i_n_t_aeee8a1e7094679a6a90e2d6b567836ff}
+ADC value of the motor current for the joint \hypertarget{struct_j_o_i_n_t_a3fe6ab5a9fb13edf8cc6db2061874432}{
+\index{JOINT@{JOINT}!targetVal@{targetVal}}
+\index{targetVal@{targetVal}!JOINT@{JOINT}}
+\subsubsection[{targetVal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::targetVal}}}
+\label{struct_j_o_i_n_t_a3fe6ab5a9fb13edf8cc6db2061874432}
+Target value for the joint, in ADC values \hypertarget{struct_j_o_i_n_t_ab534acf952f60223602ba978668ec0cd}{
+\index{JOINT@{JOINT}!xLocal@{xLocal}}
+\index{xLocal@{xLocal}!JOINT@{JOINT}}
+\subsubsection[{xLocal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::xLocal}}}
+\label{struct_j_o_i_n_t_ab534acf952f60223602ba978668ec0cd}
+Current X location relative to arm base of the end of the link attached to the joint \hypertarget{struct_j_o_i_n_t_a9c9557f89a971fd07fe4e665eaf9f465}{
+\index{JOINT@{JOINT}!yLocal@{yLocal}}
+\index{yLocal@{yLocal}!JOINT@{JOINT}}
+\subsubsection[{yLocal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf JOINT::yLocal}}}
+\label{struct_j_o_i_n_t_a9c9557f89a971fd07fe4e665eaf9f465}
+Current Y location relative to arm base of the end of the link attached to the joint 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_final___project_8h}{Final\_\-Project.h}\end{DoxyCompactItemize}

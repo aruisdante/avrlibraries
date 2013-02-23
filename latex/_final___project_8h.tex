@@ -1,0 +1,118 @@
+\hypertarget{_final___project_8h}{
+\section{Final\_\-Project.h File Reference}
+\label{_final___project_8h}\index{Final\_\-Project.h@{Final\_\-Project.h}}
+}
+
+
+Contains includes, data structures and function protos for the RBE3001 final project.  
+{\ttfamily \#include \char`\"{}ADC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}DAC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}IR\_\-Sensor.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}PID.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}portIO.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Timer16\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Timer8\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}SPI.h\char`\"{}}\par
+{\ttfamily \#include $<$avr$\backslash$IO.h$>$}\par
+{\ttfamily \#include $<$util$\backslash$delay.h$>$}\par
+{\ttfamily \#include $<$avr$\backslash$interrupt.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_j_o_i_n_t}{JOINT}
+\begin{DoxyCompactList}\small\item\em this struct contains all of the data needed to track the state of a joint on the EDUarm \item\end{DoxyCompactList}\item 
+union \hyperlink{union_s_t_a_t_e___f_l_a_g_s}{STATE\_\-FLAGS}
+\begin{DoxyCompactList}\small\item\em Union for holding flags about the current state of the system. \item\end{DoxyCompactList}\item 
+struct \hyperlink{struct_o_b_j_e_c_t___l_o_c_a_t_i_o_n}{OBJECT\_\-LOCATION}
+\begin{DoxyCompactList}\small\item\em data struction for holding the x and y location of objects on the conveyor \item\end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e}{MATLAB\_\-MESSAGE}
+\begin{DoxyCompactList}\small\item\em data structure for passing data back and forth from Matlab \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_final___project_8h_a7b3cb8ab302527b23e25f2ff17951c46}{JOINT1}~0
+\item 
+\#define \hyperlink{_final___project_8h_a1fe6899dbc6647c9e515ff3b6553f105}{JOINT2}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_final___project_8h_ab482714d3f4de31d26d81e6f07d9fee1}{Check\_\-For\_\-Object} ()
+\begin{DoxyCompactList}\small\item\em this function checks to see if there is an object on the conveyer belt \item\end{DoxyCompactList}\item 
+char \hyperlink{_final___project_8h_a78820a5f81f2d34018300fd719417654}{Check\_\-In\_\-Range} ()
+\begin{DoxyCompactList}\small\item\em this function checks to see if the object has reached the pickup area \item\end{DoxyCompactList}\item 
+\hypertarget{_final___project_8h_a103242e33997026a18db645e626ce727}{
+void \hyperlink{_final___project_8h_a103242e33997026a18db645e626ce727}{Send\_\-Data\_\-Matlab} (\hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e}{MATLAB\_\-MESSAGE} $\ast$message)}
+\label{_final___project_8h_a103242e33997026a18db645e626ce727}
+
+\begin{DoxyCompactList}\small\item\em this function sends the current state of the system to Matlab \item\end{DoxyCompactList}\item 
+\hypertarget{_final___project_8h_a65ac9dcf036a8993bd2e51b46565b3e1}{
+void \hyperlink{_final___project_8h_a65ac9dcf036a8993bd2e51b46565b3e1}{Recive\_\-Data\_\-Matlab} (\hyperlink{struct_m_a_t_l_a_b___m_e_s_s_a_g_e}{MATLAB\_\-MESSAGE} $\ast$message)}
+\label{_final___project_8h_a65ac9dcf036a8993bd2e51b46565b3e1}
+
+\begin{DoxyCompactList}\small\item\em this function receives target data for the system from Matlab \item\end{DoxyCompactList}\item 
+void \hyperlink{_final___project_8h_a760e5ceab4301ee2ccabe3a010f38727}{Enable\_\-Magnet} ()
+\begin{DoxyCompactList}\small\item\em enables the electro-\/magnet \item\end{DoxyCompactList}\item 
+void \hyperlink{_final___project_8h_a38a168ca29b5a17d86151670f7bf87ac}{Disable\_\-Magnet} ()
+\begin{DoxyCompactList}\small\item\em enables the electro-\/magnet \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains includes, data structures and function protos for the RBE3001 final project. \begin{DoxyDate}{Date}
+Feb 25, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Define Documentation}
+\hypertarget{_final___project_8h_a7b3cb8ab302527b23e25f2ff17951c46}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!JOINT1@{JOINT1}}
+\index{JOINT1@{JOINT1}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{JOINT1}]{\setlength{\rightskip}{0pt plus 5cm}\#define JOINT1~0}}
+\label{_final___project_8h_a7b3cb8ab302527b23e25f2ff17951c46}
+ADC channel for Joint 1 \hypertarget{_final___project_8h_a1fe6899dbc6647c9e515ff3b6553f105}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!JOINT2@{JOINT2}}
+\index{JOINT2@{JOINT2}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{JOINT2}]{\setlength{\rightskip}{0pt plus 5cm}\#define JOINT2~2}}
+\label{_final___project_8h_a1fe6899dbc6647c9e515ff3b6553f105}
+ADC channel for Joint 2 
+
+\subsection{Function Documentation}
+\hypertarget{_final___project_8h_ab482714d3f4de31d26d81e6f07d9fee1}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!Check\_\-For\_\-Object@{Check\_\-For\_\-Object}}
+\index{Check\_\-For\_\-Object@{Check\_\-For\_\-Object}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{Check\_\-For\_\-Object}]{\setlength{\rightskip}{0pt plus 5cm}char Check\_\-For\_\-Object ()}}
+\label{_final___project_8h_ab482714d3f4de31d26d81e6f07d9fee1}
+
+
+this function checks to see if there is an object on the conveyer belt \begin{DoxyReturn}{Returns}
+1 if object detected, else 0 
+\end{DoxyReturn}
+\hypertarget{_final___project_8h_a78820a5f81f2d34018300fd719417654}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!Check\_\-In\_\-Range@{Check\_\-In\_\-Range}}
+\index{Check\_\-In\_\-Range@{Check\_\-In\_\-Range}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{Check\_\-In\_\-Range}]{\setlength{\rightskip}{0pt plus 5cm}char Check\_\-In\_\-Range ()}}
+\label{_final___project_8h_a78820a5f81f2d34018300fd719417654}
+
+
+this function checks to see if the object has reached the pickup area \begin{DoxyReturn}{Returns}
+1 if object in range, else 0 
+\end{DoxyReturn}
+\hypertarget{_final___project_8h_a38a168ca29b5a17d86151670f7bf87ac}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!Disable\_\-Magnet@{Disable\_\-Magnet}}
+\index{Disable\_\-Magnet@{Disable\_\-Magnet}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{Disable\_\-Magnet}]{\setlength{\rightskip}{0pt plus 5cm}void Disable\_\-Magnet ()}}
+\label{_final___project_8h_a38a168ca29b5a17d86151670f7bf87ac}
+
+
+enables the electro-\/magnet void \hyperlink{_final___project_8h_a38a168ca29b5a17d86151670f7bf87ac}{Disable\_\-Magnet()} \hypertarget{_final___project_8h_a760e5ceab4301ee2ccabe3a010f38727}{
+\index{Final\_\-Project.h@{Final\_\-Project.h}!Enable\_\-Magnet@{Enable\_\-Magnet}}
+\index{Enable\_\-Magnet@{Enable\_\-Magnet}!Final_Project.h@{Final\_\-Project.h}}
+\subsubsection[{Enable\_\-Magnet}]{\setlength{\rightskip}{0pt plus 5cm}void Enable\_\-Magnet ()}}
+\label{_final___project_8h_a760e5ceab4301ee2ccabe3a010f38727}
+
+
+enables the electro-\/magnet void \hyperlink{_final___project_8h_a760e5ceab4301ee2ccabe3a010f38727}{Enable\_\-Magnet()} 

@@ -1,0 +1,96 @@
+\hypertarget{_s_p_i_8c}{
+\section{SPI.c File Reference}
+\label{_s_p_i_8c}\index{SPI.c@{SPI.c}}
+}
+
+
+Library of functions for SPI.  
+{\ttfamily \#include \char`\"{}SPI.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_s_p_i_8c_adc9b2eec8a09ebb424bb3cfd5cf9f5e1}{SPI\_\-Initialize} (char master, char dataOder, char clockPolarity, char clockPhase)
+\begin{DoxyCompactList}\small\item\em Initialize SPI for polling use. \item\end{DoxyCompactList}\item 
+char \hyperlink{_s_p_i_8c_a2d073d9e14f183d7fdf5b786285fb5d7}{SPI\_\-Send\_\-Byte} (char cData)
+\begin{DoxyCompactList}\small\item\em Send a byte on the SPI bus. \item\end{DoxyCompactList}\item 
+char \hyperlink{_s_p_i_8c_ac1d3fca78fe79505d2476878b2ccfc89}{SPI\_\-Read\_\-Byte} ()
+\begin{DoxyCompactList}\small\item\em this function reads a byte of the AVR's hardware SPI port \item\end{DoxyCompactList}\item 
+char \hyperlink{_s_p_i_8c_aad6249c5ecf671ac8b75b4b17943f762}{SPI\_\-Send\_\-Packet} (char $\ast$packet, int length, char SSPin)
+\begin{DoxyCompactList}\small\item\em Send a packet over the SPI bus. \item\end{DoxyCompactList}\item 
+char \hyperlink{_s_p_i_8c_a20ddbb3181de38de881b5044fb57ab8e}{SPI\_\-Read\_\-Packet} (char $\ast$packet, int length, char SSPin)
+\begin{DoxyCompactList}\small\item\em Send a packet over the SPI bus. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library of functions for SPI. This source file contains a library of functions to utilize the AVR's hardware SPI interface
+
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27-\/Jan-\/2009 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with \hyperlink{_s_p_i_8c_adc9b2eec8a09ebb424bb3cfd5cf9f5e1}{SPI\_\-Initialize()}, \hyperlink{_s_p_i_8c_a2d073d9e14f183d7fdf5b786285fb5d7}{SPI\_\-Send\_\-Byte()}, \hyperlink{_s_p_i_8c_aad6249c5ecf671ac8b75b4b17943f762}{SPI\_\-Send\_\-Packet()} 
+
+1.1 Modified SPI\_\-Intialize() to remove chance of the default SPI\_\-SS pin on the AVR being set to an input and low, which would clear the master flag in SPSR 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_s_p_i_8c_adc9b2eec8a09ebb424bb3cfd5cf9f5e1}{
+\index{SPI.c@{SPI.c}!SPI\_\-Initialize@{SPI\_\-Initialize}}
+\index{SPI\_\-Initialize@{SPI\_\-Initialize}!SPI.c@{SPI.c}}
+\subsubsection[{SPI\_\-Initialize}]{\setlength{\rightskip}{0pt plus 5cm}char SPI\_\-Initialize (char {\em master}, \/  char {\em dataOder}, \/  char {\em clockPolarity}, \/  char {\em clockPhase})}}
+\label{_s_p_i_8c_adc9b2eec8a09ebb424bb3cfd5cf9f5e1}
+
+
+Initialize SPI for polling use. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em master}]selects between master and slave. Use symbolic constants in \hyperlink{_s_p_i_8h}{SPI.h} \item[\mbox{$\leftarrow$} {\em dataOder}]selects between MSB first and LSB first. Use symbolic constants in \hyperlink{_s_p_i_8h}{SPI.h} \item[\mbox{$\leftarrow$} {\em clockPolarity}]selects the clock polarity mode. Use symbolic constants in \hyperlink{_s_p_i_8h}{SPI.h} \item[\mbox{$\leftarrow$} {\em clockPhase}]selects the clock phase mode. Use symbolic constants in \hyperlink{_s_p_i_8h}{SPI.h}\end{DoxyParams}
+This function initializes the hardware SPI controller \hypertarget{_s_p_i_8c_ac1d3fca78fe79505d2476878b2ccfc89}{
+\index{SPI.c@{SPI.c}!SPI\_\-Read\_\-Byte@{SPI\_\-Read\_\-Byte}}
+\index{SPI\_\-Read\_\-Byte@{SPI\_\-Read\_\-Byte}!SPI.c@{SPI.c}}
+\subsubsection[{SPI\_\-Read\_\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}SPI\_\-Read\_\-Byte ()}}
+\label{_s_p_i_8c_ac1d3fca78fe79505d2476878b2ccfc89}
+
+
+this function reads a byte of the AVR's hardware SPI port \begin{DoxyReturn}{Returns}
+8bit value from the SPI port 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Due to the way the hardware SPI port works on the AVR, this function clocks out zeros on the MOSI port as it is clocking in on MISO. Ensure that this does not cause problems 
+\end{DoxyNote}
+\hypertarget{_s_p_i_8c_a20ddbb3181de38de881b5044fb57ab8e}{
+\index{SPI.c@{SPI.c}!SPI\_\-Read\_\-Packet@{SPI\_\-Read\_\-Packet}}
+\index{SPI\_\-Read\_\-Packet@{SPI\_\-Read\_\-Packet}!SPI.c@{SPI.c}}
+\subsubsection[{SPI\_\-Read\_\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}char SPI\_\-Read\_\-Packet (char $\ast$ {\em packet}, \/  int {\em length}, \/  char {\em SSPin})}}
+\label{_s_p_i_8c_a20ddbb3181de38de881b5044fb57ab8e}
+
+
+Send a packet over the SPI bus. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$packet}]pointer to an array of bytes to store the packet to be red over the SPI bus \item[\mbox{$\leftarrow$} {\em length}]length of the packet, in bytes \item[\mbox{$\leftarrow$} {\em SSPin}]Pin on port B to use as slave select\end{DoxyParams}
+This function reads a packet of data over the SPI bus \hypertarget{_s_p_i_8c_a2d073d9e14f183d7fdf5b786285fb5d7}{
+\index{SPI.c@{SPI.c}!SPI\_\-Send\_\-Byte@{SPI\_\-Send\_\-Byte}}
+\index{SPI\_\-Send\_\-Byte@{SPI\_\-Send\_\-Byte}!SPI.c@{SPI.c}}
+\subsubsection[{SPI\_\-Send\_\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}char SPI\_\-Send\_\-Byte (char {\em cData})}}
+\label{_s_p_i_8c_a2d073d9e14f183d7fdf5b786285fb5d7}
+
+
+Send a byte on the SPI bus. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cData}]byte of data to be sent on the SPI bus\end{DoxyParams}
+This function initializes the hardware SPI controller \hypertarget{_s_p_i_8c_aad6249c5ecf671ac8b75b4b17943f762}{
+\index{SPI.c@{SPI.c}!SPI\_\-Send\_\-Packet@{SPI\_\-Send\_\-Packet}}
+\index{SPI\_\-Send\_\-Packet@{SPI\_\-Send\_\-Packet}!SPI.c@{SPI.c}}
+\subsubsection[{SPI\_\-Send\_\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}char SPI\_\-Send\_\-Packet (char $\ast$ {\em packet}, \/  int {\em length}, \/  char {\em SSPin})}}
+\label{_s_p_i_8c_aad6249c5ecf671ac8b75b4b17943f762}
+
+
+Send a packet over the SPI bus. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$packet}]pointer to an array of bytes containing the packet to be sent over the SPI bus \item[\mbox{$\leftarrow$} {\em length}]length of the packet, in bytes \item[\mbox{$\leftarrow$} {\em SSPin}]Pin on port B to use as slave select\end{DoxyParams}
+This function sends a packet of data over the SPI bus 

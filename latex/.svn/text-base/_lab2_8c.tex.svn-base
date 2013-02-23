@@ -1,0 +1,165 @@
+\hypertarget{_lab2_8c}{
+\section{Lab2.c File Reference}
+\label{_lab2_8c}\index{Lab2.c@{Lab2.c}}
+}
+
+
+Lab 2 main source file.  
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}portIO.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ADC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Timer16\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}DAC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}PID.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Arm\_\-Kinematics\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include $<$avr$\backslash$io.h$>$}\par
+{\ttfamily \#include $<$util$\backslash$delay.h$>$}\par
+{\ttfamily \#include $<$avr$\backslash$interrupt.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_lab2_8c_aec24e7e6301f68dff9f440675cc5d67f}{
+\#define {\bfseries POTMAX}~875}
+\label{_lab2_8c_aec24e7e6301f68dff9f440675cc5d67f}
+
+\item 
+\hypertarget{_lab2_8c_af7eb23901306e03be84803738379bd7b}{
+\#define {\bfseries POTMIN}~175}
+\label{_lab2_8c_af7eb23901306e03be84803738379bd7b}
+
+\item 
+\hypertarget{_lab2_8c_abed0ded5e230732177000054152de6c3}{
+\#define {\bfseries POT90}~529}
+\label{_lab2_8c_abed0ded5e230732177000054152de6c3}
+
+\item 
+\hypertarget{_lab2_8c_a71d557699865ebe9bf6380a00b4a4b2c}{
+\#define {\bfseries POT0}~865}
+\label{_lab2_8c_a71d557699865ebe9bf6380a00b4a4b2c}
+
+\item 
+\hypertarget{_lab2_8c_af4f68e48a01b217f544fc927e85710a5}{
+\#define {\bfseries DEGPERPOT0}~2486}
+\label{_lab2_8c_af4f68e48a01b217f544fc927e85710a5}
+
+\item 
+\hypertarget{_lab2_8c_a08d5909c4ba2af68a015449eba371d42}{
+\#define {\bfseries PTDOFFSET0}~-\/43}
+\label{_lab2_8c_a08d5909c4ba2af68a015449eba371d42}
+
+\item 
+\hypertarget{_lab2_8c_a43b77f09498879be3bc8183c8b657263}{
+\#define {\bfseries POTPERDEG0}~4022}
+\label{_lab2_8c_a43b77f09498879be3bc8183c8b657263}
+
+\item 
+\hypertarget{_lab2_8c_aec16f2315969d33e0e046802f38f6e74}{
+\#define {\bfseries DTPOFFSET0}~175}
+\label{_lab2_8c_aec16f2315969d33e0e046802f38f6e74}
+
+\item 
+\hypertarget{_lab2_8c_ac738ce60233b178b501d4eb554ee0bce}{
+\#define {\bfseries DEGPERPOT1}~-\/2678}
+\label{_lab2_8c_ac738ce60233b178b501d4eb554ee0bce}
+
+\item 
+\hypertarget{_lab2_8c_aabbf66e696843a00406c7245b11437db}{
+\#define {\bfseries PTDOFFSET1}~232}
+\label{_lab2_8c_aabbf66e696843a00406c7245b11437db}
+
+\item 
+\hypertarget{_lab2_8c_a593feaa5940a0a9a0af6947b7be0f9a4}{
+\#define {\bfseries POTPERDEG1}~-\/3733}
+\label{_lab2_8c_a593feaa5940a0a9a0af6947b7be0f9a4}
+
+\item 
+\hypertarget{_lab2_8c_ae77bfcb1fd4365210c5ce3f0b903174b}{
+\#define {\bfseries DTPOFFSET1}~867}
+\label{_lab2_8c_ae77bfcb1fd4365210c5ce3f0b903174b}
+
+\item 
+\hypertarget{_lab2_8c_a6aa45bbc249f4c021d1704d7bed5fd34}{
+\#define {\bfseries TRIPRECISION}~7}
+\label{_lab2_8c_a6aa45bbc249f4c021d1704d7bed5fd34}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_lab2_8c_a04d3f94da90f7ac1b018f80f321e86de}{ISR} (BADISR\_\-vect)
+\item 
+int \hyperlink{_lab2_8c_ac05daeebea73d0c1095389331b55eeae}{Pot\_\-To\_\-Degrees} (int potVal, int channel)
+\begin{DoxyCompactList}\small\item\em Converts a 10bit pot value to an angle in degrees. \item\end{DoxyCompactList}\item 
+int \hyperlink{_lab2_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}{Degrees\_\-To\_\-Pot} (int degrees, int channel)
+\begin{DoxyCompactList}\small\item\em Converts an angle in degrees to a 10bit pot value. \item\end{DoxyCompactList}\item 
+\hypertarget{_lab2_8c_a5beb6a5d3accd6e5b2ca58ec41446428}{
+int {\bfseries within} (int range, int comp1, int comp2)}
+\label{_lab2_8c_a5beb6a5d3accd6e5b2ca58ec41446428}
+
+\item 
+int \hyperlink{_lab2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lab 2 main source file. This source file contains the main code loops for Lab 2. Additional functionality is provided by various header files
+
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+
+Joel Sutherland 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27-\/Jan-\/2009 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{_lab2_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}{
+\index{Lab2.c@{Lab2.c}!Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}}
+\index{Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}!Lab2.c@{Lab2.c}}
+\subsubsection[{Degrees\_\-To\_\-Pot}]{\setlength{\rightskip}{0pt plus 5cm}int Degrees\_\-To\_\-Pot (int {\em degrees}, \/  int {\em channel})}}
+\label{_lab2_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}
+
+
+Converts an angle in degrees to a 10bit pot value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value 
+\end{DoxyReturn}
+\hypertarget{_lab2_8c_a04d3f94da90f7ac1b018f80f321e86de}{
+\index{Lab2.c@{Lab2.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Lab2.c@{Lab2.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (BADISR\_\-vect)}}
+\label{_lab2_8c_a04d3f94da90f7ac1b018f80f321e86de}
+Overwrites default unhandled interrupt vector \hypertarget{_lab2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{
+\index{Lab2.c@{Lab2.c}!main@{main}}
+\index{main@{main}!Lab2.c@{Lab2.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main ()}}
+\label{_lab2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Program entry point \hypertarget{_lab2_8c_ac05daeebea73d0c1095389331b55eeae}{
+\index{Lab2.c@{Lab2.c}!Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}}
+\index{Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}!Lab2.c@{Lab2.c}}
+\subsubsection[{Pot\_\-To\_\-Degrees}]{\setlength{\rightskip}{0pt plus 5cm}int Pot\_\-To\_\-Degrees (int {\em potVal}, \/  int {\em channel})}}
+\label{_lab2_8c_ac05daeebea73d0c1095389331b55eeae}
+
+
+Converts a 10bit pot value to an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees 
+\end{DoxyReturn}

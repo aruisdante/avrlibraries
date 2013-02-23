@@ -1,0 +1,59 @@
+\hypertarget{port_i_o_8c}{
+\section{portIO.c File Reference}
+\label{port_i_o_8c}\index{portIO.c@{portIO.c}}
+}
+
+
+This file adds functions that allow for special port IO function.  
+{\ttfamily \#include $<$avr/io.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{port_i_o_8c_a25ca979c7fc3ebc3e0b0d24f0690867f}{Pin\_\-Read} (unsigned char port, unsigned char pin)
+\begin{DoxyCompactList}\small\item\em Read an individual pin for a speccified port. \item\end{DoxyCompactList}\item 
+unsigned char \hyperlink{port_i_o_8c_a76267fbcf30d91364ee21a91ff70dc6d}{Pin\_\-Set} (unsigned char port, unsigned char pin, unsigned char value)
+\begin{DoxyCompactList}\small\item\em Write to an individual pin on a specified port. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file adds functions that allow for special port IO function. \begin{DoxyDate}{Date}
+Jan 20, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Joel Sotherland 
+
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with \hyperlink{port_i_o_8c_a25ca979c7fc3ebc3e0b0d24f0690867f}{Pin\_\-Read()} and \hyperlink{port_i_o_8c_a76267fbcf30d91364ee21a91ff70dc6d}{Pin\_\-Set()} 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{port_i_o_8c_a25ca979c7fc3ebc3e0b0d24f0690867f}{
+\index{portIO.c@{portIO.c}!Pin\_\-Read@{Pin\_\-Read}}
+\index{Pin\_\-Read@{Pin\_\-Read}!portIO.c@{portIO.c}}
+\subsubsection[{Pin\_\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char Pin\_\-Read (unsigned char {\em port}, \/  unsigned char {\em pin})}}
+\label{port_i_o_8c_a25ca979c7fc3ebc3e0b0d24f0690867f}
+
+
+Read an individual pin for a speccified port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em port}]desired port to be read from \item[\mbox{$\leftarrow$} {\em pin}]desired pin to be red from \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the selected pin
+\end{DoxyReturn}
+This function reads the value from a single pin from a specified port \hypertarget{port_i_o_8c_a76267fbcf30d91364ee21a91ff70dc6d}{
+\index{portIO.c@{portIO.c}!Pin\_\-Set@{Pin\_\-Set}}
+\index{Pin\_\-Set@{Pin\_\-Set}!portIO.c@{portIO.c}}
+\subsubsection[{Pin\_\-Set}]{\setlength{\rightskip}{0pt plus 5cm}char Pin\_\-Set (unsigned char {\em port}, \/  unsigned char {\em pin}, \/  unsigned char {\em value})}}
+\label{port_i_o_8c_a76267fbcf30d91364ee21a91ff70dc6d}
+
+
+Write to an individual pin on a specified port. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em port}]desired port to be read from \item[\mbox{$\leftarrow$} {\em pin}]desired pin to be red from \item[\mbox{$\leftarrow$} {\em value}]desied value to set the pin to \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if an invalid port/pin was specified, else 1
+\end{DoxyReturn}
+This function writes to a single pin on a port without changing the values of the other pins. 

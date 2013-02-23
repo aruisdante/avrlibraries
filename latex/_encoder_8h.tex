@@ -1,0 +1,85 @@
+\hypertarget{_encoder_8h}{
+\section{Encoder.h File Reference}
+\label{_encoder_8h}\index{Encoder.h@{Encoder.h}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_encoder_8h_ac18e9cace3933effe3daf7d87184226d}{WRITEMDR0}~9
+\item 
+\#define \hyperlink{_encoder_8h_a8a46b4a754a35480f41b213397a5e7cf}{WRITEMDR1}~10
+\item 
+\#define \hyperlink{_encoder_8h_a19dbb4ae856934b4804119d21c30a887}{READMDR0}~4
+\item 
+\#define \hyperlink{_encoder_8h_a210917461088abd82e71648ddf992fdf}{READMDR1}~5
+\item 
+\#define \hyperlink{_encoder_8h_ae83c08331bffadbb1c6252803f042bf5}{READCNT}~6
+\item 
+\#define \hyperlink{_encoder_8h_a5b293aa97b07ae054811cf53fe825cd3}{CLEARCNT}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_encoder_8h_a7573f7faef5813c273fe7c06d55bce13}{
+void \hyperlink{_encoder_8h_a7573f7faef5813c273fe7c06d55bce13}{Encoder\_\-Initialize} ()}
+\label{_encoder_8h_a7573f7faef5813c273fe7c06d55bce13}
+
+\begin{DoxyCompactList}\small\item\em Initializes the LS7366R encoder chip for use with the EDUarm. \item\end{DoxyCompactList}\item 
+char \hyperlink{_encoder_8h_a5770b79eb51a21ea2dd707125a4bd358}{Encoder\_\-Read} (char command, long $\ast$result)
+\begin{DoxyCompactList}\small\item\em Reads from a register on the LS7366R encoder chip. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyDate}{Date}
+Feb 19, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Define Documentation}
+\hypertarget{_encoder_8h_a5b293aa97b07ae054811cf53fe825cd3}{
+\index{Encoder.h@{Encoder.h}!CLEARCNT@{CLEARCNT}}
+\index{CLEARCNT@{CLEARCNT}!Encoder.h@{Encoder.h}}
+\subsubsection[{CLEARCNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CLEARCNT~2}}
+\label{_encoder_8h_a5b293aa97b07ae054811cf53fe825cd3}
+Clear CNTR \hypertarget{_encoder_8h_ae83c08331bffadbb1c6252803f042bf5}{
+\index{Encoder.h@{Encoder.h}!READCNT@{READCNT}}
+\index{READCNT@{READCNT}!Encoder.h@{Encoder.h}}
+\subsubsection[{READCNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define READCNT~6}}
+\label{_encoder_8h_ae83c08331bffadbb1c6252803f042bf5}
+Read from CNTR \hypertarget{_encoder_8h_a19dbb4ae856934b4804119d21c30a887}{
+\index{Encoder.h@{Encoder.h}!READMDR0@{READMDR0}}
+\index{READMDR0@{READMDR0}!Encoder.h@{Encoder.h}}
+\subsubsection[{READMDR0}]{\setlength{\rightskip}{0pt plus 5cm}\#define READMDR0~4}}
+\label{_encoder_8h_a19dbb4ae856934b4804119d21c30a887}
+Read from MDR0 \hypertarget{_encoder_8h_a210917461088abd82e71648ddf992fdf}{
+\index{Encoder.h@{Encoder.h}!READMDR1@{READMDR1}}
+\index{READMDR1@{READMDR1}!Encoder.h@{Encoder.h}}
+\subsubsection[{READMDR1}]{\setlength{\rightskip}{0pt plus 5cm}\#define READMDR1~5}}
+\label{_encoder_8h_a210917461088abd82e71648ddf992fdf}
+Read from MDR1 \hypertarget{_encoder_8h_ac18e9cace3933effe3daf7d87184226d}{
+\index{Encoder.h@{Encoder.h}!WRITEMDR0@{WRITEMDR0}}
+\index{WRITEMDR0@{WRITEMDR0}!Encoder.h@{Encoder.h}}
+\subsubsection[{WRITEMDR0}]{\setlength{\rightskip}{0pt plus 5cm}\#define WRITEMDR0~9}}
+\label{_encoder_8h_ac18e9cace3933effe3daf7d87184226d}
+Write to MDR0 \hypertarget{_encoder_8h_a8a46b4a754a35480f41b213397a5e7cf}{
+\index{Encoder.h@{Encoder.h}!WRITEMDR1@{WRITEMDR1}}
+\index{WRITEMDR1@{WRITEMDR1}!Encoder.h@{Encoder.h}}
+\subsubsection[{WRITEMDR1}]{\setlength{\rightskip}{0pt plus 5cm}\#define WRITEMDR1~10}}
+\label{_encoder_8h_a8a46b4a754a35480f41b213397a5e7cf}
+Write to MDR1 
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_8h_a5770b79eb51a21ea2dd707125a4bd358}{
+\index{Encoder.h@{Encoder.h}!Encoder\_\-Read@{Encoder\_\-Read}}
+\index{Encoder\_\-Read@{Encoder\_\-Read}!Encoder.h@{Encoder.h}}
+\subsubsection[{Encoder\_\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char Encoder\_\-Read (char {\em command}, \/  long $\ast$ {\em result})}}
+\label{_encoder_8h_a5770b79eb51a21ea2dd707125a4bd358}
+
+
+Reads from a register on the LS7366R encoder chip. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em command}]A valid encoder command. Use the symbolic constants in \hyperlink{_encoder_8h}{Encoder.h} \item[\mbox{$\leftarrow$} {\em $\ast$result}]pointer to a long value to store the result to\end{DoxyParams}
+This function reads from a register on the LS7366R encoder chip over SPI. It stores the result to the location pointed to by $\ast$result. NOTE: Not all registers are longs (and depending on configuration, none of them might be), so it is up to the user to interpret the returned value correctly. For READCNT commands, if the CNTR register is set to be less than 4 bytes, it will store the returned data in the upper n bytes of the long, MSBF, where n is the number of bytes CNTR is set up to be. For all other commands, it stores the value in the lower bytes. NOTE: Interrupts are disabled while this operation communicates over the SPI bus. Care should be taken that critical interrupts do not happen during the operation, as they will be ignored. 

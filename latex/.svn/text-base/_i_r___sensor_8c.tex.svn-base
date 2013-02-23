@@ -1,0 +1,60 @@
+\hypertarget{_i_r___sensor_8c}{
+\section{IR\_\-Sensor.c File Reference}
+\label{_i_r___sensor_8c}\index{IR\_\-Sensor.c@{IR\_\-Sensor.c}}
+}
+
+
+Functions for utilizing the Sharp IR range finding sensor.  
+{\ttfamily \#include \char`\"{}IR\_\-Sensor.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ADC.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_i_r___sensor_8c_a9532e2e8ef2a527dc4fbbbc4b3fea76c}{IR\_\-interpolate} (int xA, int yA, int xB, int yB, int value)
+\begin{DoxyCompactList}\small\item\em Performs a linear interpolation. \item\end{DoxyCompactList}\item 
+int \hyperlink{_i_r___sensor_8c_a939da12a8844e85a8cf1974e7d462ab6}{ReadIR} (int channel)
+\begin{DoxyCompactList}\small\item\em Gets a range formt the IR sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for utilizing the Sharp IR range finding sensor. \begin{DoxyDate}{Date}
+Feb 16, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with \hyperlink{_i_r___sensor_8c_a939da12a8844e85a8cf1974e7d462ab6}{ReadIR()} and interpolate() 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_r___sensor_8c_a9532e2e8ef2a527dc4fbbbc4b3fea76c}{
+\index{IR\_\-Sensor.c@{IR\_\-Sensor.c}!IR\_\-interpolate@{IR\_\-interpolate}}
+\index{IR\_\-interpolate@{IR\_\-interpolate}!IR_Sensor.c@{IR\_\-Sensor.c}}
+\subsubsection[{IR\_\-interpolate}]{\setlength{\rightskip}{0pt plus 5cm}int IR\_\-interpolate (int {\em xA}, \/  int {\em yA}, \/  int {\em xB}, \/  int {\em yB}, \/  int {\em value})}}
+\label{_i_r___sensor_8c_a9532e2e8ef2a527dc4fbbbc4b3fea76c}
+
+
+Performs a linear interpolation. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em xA}]the lower bound along the input axis \item[\mbox{$\leftarrow$} {\em yA}]the lower bound along the output axis \item[\mbox{$\leftarrow$} {\em xB}]the upper bound along the input axis \item[\mbox{$\leftarrow$} {\em yB}]the upper bound along the output axis \item[\mbox{$\leftarrow$} {\em value}]the input value to be interpolated \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output value of the interpolated input
+\end{DoxyReturn}
+This function performs a linear interpolation between two points and a given input \hypertarget{_i_r___sensor_8c_a939da12a8844e85a8cf1974e7d462ab6}{
+\index{IR\_\-Sensor.c@{IR\_\-Sensor.c}!ReadIR@{ReadIR}}
+\index{ReadIR@{ReadIR}!IR_Sensor.c@{IR\_\-Sensor.c}}
+\subsubsection[{ReadIR}]{\setlength{\rightskip}{0pt plus 5cm}int ReadIR (int {\em channel})}}
+\label{_i_r___sensor_8c_a939da12a8844e85a8cf1974e7d462ab6}
+
+
+Gets a range formt the IR sensor. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channel}]the desired channel to read from \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the range to target, in mm
+\end{DoxyReturn}
+This function reads a value from the sharp IR sensor on the specified channel and returns a range in millimeters 

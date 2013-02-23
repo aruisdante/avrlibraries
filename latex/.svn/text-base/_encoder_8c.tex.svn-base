@@ -1,0 +1,152 @@
+\hypertarget{_encoder_8c}{
+\section{Encoder.c File Reference}
+\label{_encoder_8c}\index{Encoder.c@{Encoder.c}}
+}
+{\ttfamily \#include \char`\"{}Encoder.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}SPI.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}PortIO.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union_e_n_c_o_d_e_r___c_o_m_m_a_n_d}{ENCODER\_\-COMMAND}
+\item 
+union \hyperlink{union_e_n_c_o_d_e_r___m_d_r0}{ENCODER\_\-MDR0}
+\item 
+union \hyperlink{union_e_n_c_o_d_e_r___m_d_r1}{ENCODER\_\-MDR1}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_encoder_8c_a59a3ab02bc14f1364656f2c1c22c1b62}{RSNONE}~0b000
+\item 
+\#define \hyperlink{_encoder_8c_a950703e99e64ea28e7ce6e69a9a7c67a}{RSMDR0}~0b001
+\item 
+\#define \hyperlink{_encoder_8c_a5bcb3e5392678692021fd012b967d32b}{RSMDR1}~0b010
+\item 
+\#define \hyperlink{_encoder_8c_a4dc4e9c3f78896753b7877997960eb90}{RSDTR}~0b011
+\item 
+\#define \hyperlink{_encoder_8c_ae107e7b811dfbeffdd60e695d2cd5338}{RSCNTR}~0b100
+\item 
+\#define \hyperlink{_encoder_8c_aaf94d748527bf71283597ea5b33e8815}{RSOTR}~0b101
+\item 
+\#define \hyperlink{_encoder_8c_ab79d179b5cc70813aeb187275f64517a}{RSSTR}~0b110
+\item 
+\#define \hyperlink{_encoder_8c_a351c98edee3914e8d987b838fe0cb06e}{CCLR}~0b00
+\item 
+\#define \hyperlink{_encoder_8c_a43ac2501fb0a91b3bde8378ccdec6518}{CRD}~0b01
+\item 
+\#define \hyperlink{_encoder_8c_a019e60770a8133ba4c721014ade552df}{CWR}~0b10
+\item 
+\#define \hyperlink{_encoder_8c_a1c27b5b63f4340f43e0fc7addeb741f8}{CLOAD}~0b11
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_encoder_8c_aaf65054d2d4d3688f6541029051024bc}{
+char \hyperlink{_encoder_8c_aaf65054d2d4d3688f6541029051024bc}{Encoder\_\-Initialize\_\-SPI} ()}
+\label{_encoder_8c_aaf65054d2d4d3688f6541029051024bc}
+
+\begin{DoxyCompactList}\small\item\em Initializes the AVR's hardware SPI to communicate with the LS7366R encoder chip. \item\end{DoxyCompactList}\item 
+void \hyperlink{_encoder_8c_a1ccb07419fb199d6095869ba7eac4e0b}{Encoder\_\-Generate\_\-Command} (unsigned char encCommand, \hyperlink{union_e_n_c_o_d_e_r___c_o_m_m_a_n_d}{ENCODER\_\-COMMAND} $\ast$genCom)
+\begin{DoxyCompactList}\small\item\em Generates a valid LS7366R encoder chip command. \item\end{DoxyCompactList}\item 
+\hypertarget{_encoder_8c_a7573f7faef5813c273fe7c06d55bce13}{
+void \hyperlink{_encoder_8c_a7573f7faef5813c273fe7c06d55bce13}{Encoder\_\-Initialize} ()}
+\label{_encoder_8c_a7573f7faef5813c273fe7c06d55bce13}
+
+\begin{DoxyCompactList}\small\item\em Initializes the LS7366R encoder chip for use with the EDUarm. \item\end{DoxyCompactList}\item 
+char \hyperlink{_encoder_8c_a5770b79eb51a21ea2dd707125a4bd358}{Encoder\_\-Read} (char command, long $\ast$result)
+\begin{DoxyCompactList}\small\item\em Reads from a register on the LS7366R encoder chip. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyDate}{Date}
+Feb 19, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Define Documentation}
+\hypertarget{_encoder_8c_a351c98edee3914e8d987b838fe0cb06e}{
+\index{Encoder.c@{Encoder.c}!CCLR@{CCLR}}
+\index{CCLR@{CCLR}!Encoder.c@{Encoder.c}}
+\subsubsection[{CCLR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CCLR~0b00}}
+\label{_encoder_8c_a351c98edee3914e8d987b838fe0cb06e}
+Perform a clear command \hypertarget{_encoder_8c_a1c27b5b63f4340f43e0fc7addeb741f8}{
+\index{Encoder.c@{Encoder.c}!CLOAD@{CLOAD}}
+\index{CLOAD@{CLOAD}!Encoder.c@{Encoder.c}}
+\subsubsection[{CLOAD}]{\setlength{\rightskip}{0pt plus 5cm}\#define CLOAD~0b11}}
+\label{_encoder_8c_a1c27b5b63f4340f43e0fc7addeb741f8}
+Perform a load command \hypertarget{_encoder_8c_a43ac2501fb0a91b3bde8378ccdec6518}{
+\index{Encoder.c@{Encoder.c}!CRD@{CRD}}
+\index{CRD@{CRD}!Encoder.c@{Encoder.c}}
+\subsubsection[{CRD}]{\setlength{\rightskip}{0pt plus 5cm}\#define CRD~0b01}}
+\label{_encoder_8c_a43ac2501fb0a91b3bde8378ccdec6518}
+Perform a read command \hypertarget{_encoder_8c_a019e60770a8133ba4c721014ade552df}{
+\index{Encoder.c@{Encoder.c}!CWR@{CWR}}
+\index{CWR@{CWR}!Encoder.c@{Encoder.c}}
+\subsubsection[{CWR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CWR~0b10}}
+\label{_encoder_8c_a019e60770a8133ba4c721014ade552df}
+Perform a write command \hypertarget{_encoder_8c_ae107e7b811dfbeffdd60e695d2cd5338}{
+\index{Encoder.c@{Encoder.c}!RSCNTR@{RSCNTR}}
+\index{RSCNTR@{RSCNTR}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSCNTR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSCNTR~0b100}}
+\label{_encoder_8c_ae107e7b811dfbeffdd60e695d2cd5338}
+Selects CNTR register \hypertarget{_encoder_8c_a4dc4e9c3f78896753b7877997960eb90}{
+\index{Encoder.c@{Encoder.c}!RSDTR@{RSDTR}}
+\index{RSDTR@{RSDTR}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSDTR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSDTR~0b011}}
+\label{_encoder_8c_a4dc4e9c3f78896753b7877997960eb90}
+Selects DTR register \hypertarget{_encoder_8c_a950703e99e64ea28e7ce6e69a9a7c67a}{
+\index{Encoder.c@{Encoder.c}!RSMDR0@{RSMDR0}}
+\index{RSMDR0@{RSMDR0}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSMDR0}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSMDR0~0b001}}
+\label{_encoder_8c_a950703e99e64ea28e7ce6e69a9a7c67a}
+Selects MDR0 register \hypertarget{_encoder_8c_a5bcb3e5392678692021fd012b967d32b}{
+\index{Encoder.c@{Encoder.c}!RSMDR1@{RSMDR1}}
+\index{RSMDR1@{RSMDR1}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSMDR1}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSMDR1~0b010}}
+\label{_encoder_8c_a5bcb3e5392678692021fd012b967d32b}
+Selects MDR1 register \hypertarget{_encoder_8c_a59a3ab02bc14f1364656f2c1c22c1b62}{
+\index{Encoder.c@{Encoder.c}!RSNONE@{RSNONE}}
+\index{RSNONE@{RSNONE}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSNONE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSNONE~0b000}}
+\label{_encoder_8c_a59a3ab02bc14f1364656f2c1c22c1b62}
+Selects no register \hypertarget{_encoder_8c_aaf94d748527bf71283597ea5b33e8815}{
+\index{Encoder.c@{Encoder.c}!RSOTR@{RSOTR}}
+\index{RSOTR@{RSOTR}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSOTR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSOTR~0b101}}
+\label{_encoder_8c_aaf94d748527bf71283597ea5b33e8815}
+Selects OTR register \hypertarget{_encoder_8c_ab79d179b5cc70813aeb187275f64517a}{
+\index{Encoder.c@{Encoder.c}!RSSTR@{RSSTR}}
+\index{RSSTR@{RSSTR}!Encoder.c@{Encoder.c}}
+\subsubsection[{RSSTR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSSTR~0b110}}
+\label{_encoder_8c_ab79d179b5cc70813aeb187275f64517a}
+Selects STR register 
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_8c_a1ccb07419fb199d6095869ba7eac4e0b}{
+\index{Encoder.c@{Encoder.c}!Encoder\_\-Generate\_\-Command@{Encoder\_\-Generate\_\-Command}}
+\index{Encoder\_\-Generate\_\-Command@{Encoder\_\-Generate\_\-Command}!Encoder.c@{Encoder.c}}
+\subsubsection[{Encoder\_\-Generate\_\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\_\-Generate\_\-Command (unsigned char {\em encCommand}, \/  {\bf ENCODER\_\-COMMAND} $\ast$ {\em genCom})}}
+\label{_encoder_8c_a1ccb07419fb199d6095869ba7eac4e0b}
+
+
+Generates a valid LS7366R encoder chip command. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em encCommand}]Command number to be generated \item[\mbox{$\leftarrow$} {\em $\ast$genCom}]Pointer to an \hyperlink{union_e_n_c_o_d_e_r___c_o_m_m_a_n_d}{ENCODER\_\-COMMAND} union to store the generate command to \end{DoxyParams}
+\hypertarget{_encoder_8c_a5770b79eb51a21ea2dd707125a4bd358}{
+\index{Encoder.c@{Encoder.c}!Encoder\_\-Read@{Encoder\_\-Read}}
+\index{Encoder\_\-Read@{Encoder\_\-Read}!Encoder.c@{Encoder.c}}
+\subsubsection[{Encoder\_\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char Encoder\_\-Read (char {\em command}, \/  long $\ast$ {\em result})}}
+\label{_encoder_8c_a5770b79eb51a21ea2dd707125a4bd358}
+
+
+Reads from a register on the LS7366R encoder chip. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em command}]A valid encoder command. Use the symbolic constants in \hyperlink{_encoder_8h}{Encoder.h} \item[\mbox{$\leftarrow$} {\em $\ast$result}]pointer to a long value to store the result to\end{DoxyParams}
+This function reads from a register on the LS7366R encoder chip over SPI. It stores the result to the location pointed to by $\ast$result. NOTE: Not all registers are longs (and depending on configuration, none of them might be), so it is up to the user to interpret the returned value correctly. For READCNT commands, if the CNTR register is set to be less than 4 bytes, it will store the returned data in the upper n bytes of the long, MSBF, where n is the number of bytes CNTR is set up to be. For all other commands, it stores the value in the lower bytes. NOTE: Interrupts are disabled while this operation communicates over the SPI bus. Care should be taken that critical interrupts do not happen during the operation, as they will be ignored. 

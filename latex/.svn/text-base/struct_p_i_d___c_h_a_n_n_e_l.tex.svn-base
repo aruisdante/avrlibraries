@@ -1,0 +1,114 @@
+\hypertarget{struct_p_i_d___c_h_a_n_n_e_l}{
+\section{PID\_\-CHANNEL Struct Reference}
+\label{struct_p_i_d___c_h_a_n_n_e_l}\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}}
+}
+
+
+this strcut defines a \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} object  
+
+
+{\ttfamily \#include $<$PID.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a09061f8a9e2deb69609b7ea1119c2e9a}{Kp}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a0f4181cbf8772b0ec137027f55fdacaf}{Ki}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_ae67a65601ca3b021c2898a08d8eec9cf}{Kd}
+\item 
+char \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_ae9e9bf53d8537483ff30c321d1e41a6c}{spool}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a9c3084891683bbd11aa3c3532226d17a}{\_\-error}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a5c528dee40ab7133a1230add3f06454e}{\_\-lastError}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a63289ebbaa180daebfe295140ca72506}{\_\-lastLastE}
+\item 
+int \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a930b26bd699988f70dc9e37755191bcc}{\_\-errorSum}
+\item 
+char \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a0a3fa28f67daec7ecd0a7cc19d1c87c7}{\_\-channel}
+\item 
+int $\ast$ \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a4b1908af1110c9c865d4bc180d6cde34}{target}
+\item 
+int $\ast$ \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_a7f6a2487673b9bbf1b6b7fd1557fad40}{current}
+\item 
+int $\ast$ \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_ace536ba0991aec901fe31907285a4fda}{correctionValue}
+\item 
+int $\ast$ \hyperlink{struct_p_i_d___c_h_a_n_n_e_l_ae27945cba43984289b486352691f5fd6}{LMDVal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this strcut defines a \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} object The \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} serves as an interface to the PID controller. All interactions with the PID controller happen through a \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} struct. Specifically, the Kp, Ki, Kd and spool constants are set once, and then the contents of the variables pointed to by the 'Communication Variables', $\ast$target and $\ast$current, can be used to update the PID controller, while $\ast$correctionValue and $\ast$LMDValue can be used to monitor status. The 'Internal Variables' are utilized by 'private' functions in the PID controller, and thus should not be accessed by the user directly. 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a0a3fa28f67daec7ecd0a7cc19d1c87c7}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!\_\-channel@{\_\-channel}}
+\index{\_\-channel@{\_\-channel}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{\_\-channel}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf PID\_\-CHANNEL::\_\-channel}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a0a3fa28f67daec7ecd0a7cc19d1c87c7}
+Channel number \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a9c3084891683bbd11aa3c3532226d17a}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!\_\-error@{\_\-error}}
+\index{\_\-error@{\_\-error}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::\_\-error}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a9c3084891683bbd11aa3c3532226d17a}
+Current error to target \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a930b26bd699988f70dc9e37755191bcc}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!\_\-errorSum@{\_\-errorSum}}
+\index{\_\-errorSum@{\_\-errorSum}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{\_\-errorSum}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::\_\-errorSum}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a930b26bd699988f70dc9e37755191bcc}
+Sum of errors to target \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a5c528dee40ab7133a1230add3f06454e}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!\_\-lastError@{\_\-lastError}}
+\index{\_\-lastError@{\_\-lastError}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{\_\-lastError}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::\_\-lastError}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a5c528dee40ab7133a1230add3f06454e}
+Last error to target \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a63289ebbaa180daebfe295140ca72506}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!\_\-lastLastE@{\_\-lastLastE}}
+\index{\_\-lastLastE@{\_\-lastLastE}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{\_\-lastLastE}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::\_\-lastLastE}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a63289ebbaa180daebfe295140ca72506}
+Error previous to last error, used by errorSum \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_ace536ba0991aec901fe31907285a4fda}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!correctionValue@{correctionValue}}
+\index{correctionValue@{correctionValue}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{correctionValue}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf PID\_\-CHANNEL::correctionValue}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_ace536ba0991aec901fe31907285a4fda}
+Pointer to a variable that contains the PID correction value, to be written to \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a7f6a2487673b9bbf1b6b7fd1557fad40}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!current@{current}}
+\index{current@{current}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf PID\_\-CHANNEL::current}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a7f6a2487673b9bbf1b6b7fd1557fad40}
+Pointer to the current input to the PID channel, to be red from \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_ae67a65601ca3b021c2898a08d8eec9cf}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!Kd@{Kd}}
+\index{Kd@{Kd}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{Kd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::Kd}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_ae67a65601ca3b021c2898a08d8eec9cf}
+Derivative Tuning Constant \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a0f4181cbf8772b0ec137027f55fdacaf}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!Ki@{Ki}}
+\index{Ki@{Ki}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{Ki}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::Ki}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a0f4181cbf8772b0ec137027f55fdacaf}
+Integral Tuning Constant \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a09061f8a9e2deb69609b7ea1119c2e9a}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!Kp@{Kp}}
+\index{Kp@{Kp}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{Kp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PID\_\-CHANNEL::Kp}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a09061f8a9e2deb69609b7ea1119c2e9a}
+Proportional Tuning Constant \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_ae27945cba43984289b486352691f5fd6}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!LMDVal@{LMDVal}}
+\index{LMDVal@{LMDVal}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{LMDVal}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf PID\_\-CHANNEL::LMDVal}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_ae27945cba43984289b486352691f5fd6}
+Voltage being sent to the LMD \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_ae9e9bf53d8537483ff30c321d1e41a6c}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!spool@{spool}}
+\index{spool@{spool}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{spool}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf PID\_\-CHANNEL::spool}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_ae9e9bf53d8537483ff30c321d1e41a6c}
+Integral Spool Protection constant \hypertarget{struct_p_i_d___c_h_a_n_n_e_l_a4b1908af1110c9c865d4bc180d6cde34}{
+\index{PID\_\-CHANNEL@{PID\_\-CHANNEL}!target@{target}}
+\index{target@{target}!PID_CHANNEL@{PID\_\-CHANNEL}}
+\subsubsection[{target}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf PID\_\-CHANNEL::target}}}
+\label{struct_p_i_d___c_h_a_n_n_e_l_a4b1908af1110c9c865d4bc180d6cde34}
+Pointer to the current target of the PID channel, to be red from 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_p_i_d_8h}{PID.h}\end{DoxyCompactItemize}

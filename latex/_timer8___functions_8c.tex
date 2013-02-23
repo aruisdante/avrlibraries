@@ -1,0 +1,100 @@
+\hypertarget{_timer8___functions_8c}{
+\section{Timer8\_\-Functions.c File Reference}
+\label{_timer8___functions_8c}\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}}
+}
+
+
+library of functions for using 8bit Timer 0  
+{\ttfamily \#include \char`\"{}Timer8\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}portIO.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer8___functions_8c_a6ebe466e477d394ca5bb309b35b6bc39}{FCLK}~18432000
+\item 
+\#define \hyperlink{_timer8___functions_8c_a25f6e54db4ab6914d8dc3b539f31d4f1}{FMINPS1}~36000
+\item 
+\#define \hyperlink{_timer8___functions_8c_a2c7e39ecb140560caa91e37c69c37fd7}{FMINPS8}~4500
+\item 
+\#define \hyperlink{_timer8___functions_8c_ac1f72e1e3e552f5a33c7c80898bb2047}{FMINPS64}~562
+\item 
+\#define \hyperlink{_timer8___functions_8c_a32edcba1fa05a9ad3a313fdd2d0367e5}{FMINPS256}~140
+\item 
+\#define \hyperlink{_timer8___functions_8c_a625dd925fec74297383e24c4d4386842}{FMINPS1024}~35
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_timer8___functions_8c_ac42209c3cb011b74918be43bcaea930f}{Timer8\_\-Initialize\_\-CTC} (unsigned int frequency)
+\begin{DoxyCompactList}\small\item\em Sets up the timer to trigger an interrupt at a set frequency. \item\end{DoxyCompactList}\item 
+void \hyperlink{_timer8___functions_8c_ad235657d2761bb9791e4c4de9782073c}{Timer8\_\-Initialize\_\-US\_\-Pulse} ()
+\begin{DoxyCompactList}\small\item\em Sets up the timer to generate a pulse at set intervals. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+library of functions for using 8bit Timer 0 \begin{DoxyDate}{Date}
+Feb 4, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with \hyperlink{_timer8___functions_8c_ac42209c3cb011b74918be43bcaea930f}{Timer8\_\-Initialize\_\-CTC()} 
+\end{DoxyVersion}
+
+
+\subsection{Define Documentation}
+\hypertarget{_timer8___functions_8c_a6ebe466e477d394ca5bb309b35b6bc39}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FCLK@{FCLK}}
+\index{FCLK@{FCLK}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FCLK}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCLK~18432000}}
+\label{_timer8___functions_8c_a6ebe466e477d394ca5bb309b35b6bc39}
+Constant representing the base clock of the AVR \hypertarget{_timer8___functions_8c_a25f6e54db4ab6914d8dc3b539f31d4f1}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FMINPS1@{FMINPS1}}
+\index{FMINPS1@{FMINPS1}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FMINPS1}]{\setlength{\rightskip}{0pt plus 5cm}\#define FMINPS1~36000}}
+\label{_timer8___functions_8c_a25f6e54db4ab6914d8dc3b539f31d4f1}
+Constant representing the minimum output frequency possible with a prescale of 1 \hypertarget{_timer8___functions_8c_a625dd925fec74297383e24c4d4386842}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FMINPS1024@{FMINPS1024}}
+\index{FMINPS1024@{FMINPS1024}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FMINPS1024}]{\setlength{\rightskip}{0pt plus 5cm}\#define FMINPS1024~35}}
+\label{_timer8___functions_8c_a625dd925fec74297383e24c4d4386842}
+Constant representing the minimum output frequency possible with a prescale of 1024 \hypertarget{_timer8___functions_8c_a32edcba1fa05a9ad3a313fdd2d0367e5}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FMINPS256@{FMINPS256}}
+\index{FMINPS256@{FMINPS256}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FMINPS256}]{\setlength{\rightskip}{0pt plus 5cm}\#define FMINPS256~140}}
+\label{_timer8___functions_8c_a32edcba1fa05a9ad3a313fdd2d0367e5}
+Constant representing the minimum output frequency possible with a prescale of 256 \hypertarget{_timer8___functions_8c_ac1f72e1e3e552f5a33c7c80898bb2047}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FMINPS64@{FMINPS64}}
+\index{FMINPS64@{FMINPS64}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FMINPS64}]{\setlength{\rightskip}{0pt plus 5cm}\#define FMINPS64~562}}
+\label{_timer8___functions_8c_ac1f72e1e3e552f5a33c7c80898bb2047}
+Constant representing the minimum output frequency possible with a prescale of 64 \hypertarget{_timer8___functions_8c_a2c7e39ecb140560caa91e37c69c37fd7}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!FMINPS8@{FMINPS8}}
+\index{FMINPS8@{FMINPS8}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{FMINPS8}]{\setlength{\rightskip}{0pt plus 5cm}\#define FMINPS8~4500}}
+\label{_timer8___functions_8c_a2c7e39ecb140560caa91e37c69c37fd7}
+Constant representing the minimum output frequency possible with a prescale of 8 
+
+\subsection{Function Documentation}
+\hypertarget{_timer8___functions_8c_ac42209c3cb011b74918be43bcaea930f}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!Timer8\_\-Initialize\_\-CTC@{Timer8\_\-Initialize\_\-CTC}}
+\index{Timer8\_\-Initialize\_\-CTC@{Timer8\_\-Initialize\_\-CTC}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{Timer8\_\-Initialize\_\-CTC}]{\setlength{\rightskip}{0pt plus 5cm}void Timer8\_\-Initialize\_\-CTC (unsigned int {\em frequency})}}
+\label{_timer8___functions_8c_ac42209c3cb011b74918be43bcaea930f}
+
+
+Sets up the timer to trigger an interrupt at a set frequency. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em frequency}]desired frequency of the trigger, in Hz\end{DoxyParams}
+This function sets up the AVR's 8bit Timer 0 to run using CTC mode in order to trigger an interrupt at a set frequency. NOTE: The minimum frequency possible given the 18.432MHz base clock is 35MHz. The maximum frequency is 18.432MHz/2 \hypertarget{_timer8___functions_8c_ad235657d2761bb9791e4c4de9782073c}{
+\index{Timer8\_\-Functions.c@{Timer8\_\-Functions.c}!Timer8\_\-Initialize\_\-US\_\-Pulse@{Timer8\_\-Initialize\_\-US\_\-Pulse}}
+\index{Timer8\_\-Initialize\_\-US\_\-Pulse@{Timer8\_\-Initialize\_\-US\_\-Pulse}!Timer8_Functions.c@{Timer8\_\-Functions.c}}
+\subsubsection[{Timer8\_\-Initialize\_\-US\_\-Pulse}]{\setlength{\rightskip}{0pt plus 5cm}void Timer8\_\-Initialize\_\-US\_\-Pulse ()}}
+\label{_timer8___functions_8c_ad235657d2761bb9791e4c4de9782073c}
+
+
+Sets up the timer to generate a pulse at set intervals. This function sets up the AVR's 8bit Timer 0 to generate a 1ms pulse every 31ms. It generates this continuously, trapping the processor in an infinate loop. 

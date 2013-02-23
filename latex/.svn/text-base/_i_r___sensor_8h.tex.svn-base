@@ -1,0 +1,35 @@
+\hypertarget{_i_r___sensor_8h}{
+\section{IR\_\-Sensor.h File Reference}
+\label{_i_r___sensor_8h}\index{IR\_\-Sensor.h@{IR\_\-Sensor.h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_i_r___sensor_8h_a939da12a8844e85a8cf1974e7d462ab6}{ReadIR} (int channel)
+\begin{DoxyCompactList}\small\item\em Gets a range formt the IR sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyDate}{Date}
+Feb 16, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_r___sensor_8h_a939da12a8844e85a8cf1974e7d462ab6}{
+\index{IR\_\-Sensor.h@{IR\_\-Sensor.h}!ReadIR@{ReadIR}}
+\index{ReadIR@{ReadIR}!IR_Sensor.h@{IR\_\-Sensor.h}}
+\subsubsection[{ReadIR}]{\setlength{\rightskip}{0pt plus 5cm}int ReadIR (int {\em channel})}}
+\label{_i_r___sensor_8h_a939da12a8844e85a8cf1974e7d462ab6}
+
+
+Gets a range formt the IR sensor. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channel}]the desired channel to read from \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the range to target, in mm
+\end{DoxyReturn}
+This function reads a value from the sharp IR sensor on the specified channel and returns a range in millimeters 

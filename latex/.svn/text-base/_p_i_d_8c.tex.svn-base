@@ -1,0 +1,227 @@
+\hypertarget{_p_i_d_8c}{
+\section{PID.c File Reference}
+\label{_p_i_d_8c}\index{PID.c@{PID.c}}
+}
+
+
+Library of functions for PID control.  
+{\ttfamily \#include \char`\"{}PID.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Simple\_\-Serial.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Timer8\_\-Functions.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}DAC.h\char`\"{}}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p_i_d_8c_afd579125cbb0710cf36c6688f272b966}{SCALE1}~1000
+\item 
+\#define \hyperlink{_p_i_d_8c_aa0141381f267dfc050107e7c5b0d67c1}{SCALE2}~10000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_p_i_d_8c_aa1119e5ecd1e98ca065e95119574fc05}{PID\_\-Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes PID control. \item\end{DoxyCompactList}\item 
+\hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} $\ast$ \hyperlink{_p_i_d_8c_a566367e7249999c52d04102587ed2356}{PID\_\-Add\_\-Channel} (int $\ast$target, int $\ast$current, int $\ast$correctionValue, int $\ast$LMDVal, int Kp, int Ki, int Kd, char spool)
+\begin{DoxyCompactList}\small\item\em Adds a PID channel to the PID controller. \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_a781bfbd112229959a281103e6997f6e0}{PID\_\-Proportional} (int $\ast$error, int $\ast$Kp)
+\begin{DoxyCompactList}\small\item\em calculates the proportional element of PID \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_af53da3af33f1ef9c8c504e7905864e54}{PID\_\-Integral} (int $\ast$errorSum, int $\ast$Ki)
+\begin{DoxyCompactList}\small\item\em calculates the integral element of PID \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_a463084f427720394cce958eed999a4dd}{PID\_\-Derivative} (int $\ast$error, int $\ast$lastError, int $\ast$Kd)
+\begin{DoxyCompactList}\small\item\em calculates the derivative element of PID \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_a7efb1c6c42251234859815a27ce49627}{PID} (\hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} $\ast$PIDchan)
+\begin{DoxyCompactList}\small\item\em calculates PID \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_af8e0f3873686dd93a84a2b98720e6165}{PID\_\-CorrectionVal\_\-to\_\-Volts} (int correctionVal)
+\begin{DoxyCompactList}\small\item\em Turns the unit-\/less number returned by the PID loop into a voltage value for the LMD. \item\end{DoxyCompactList}\item 
+\hyperlink{_p_i_d_8c_aec43762dc86e029b395d4e5819192c2d}{ISR} (TIMER0\_\-COMPA\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR handler that uses timer 0 to update the PID controller. \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_ac05daeebea73d0c1095389331b55eeae}{Pot\_\-To\_\-Degrees} (int potVal, int channel)
+\begin{DoxyCompactList}\small\item\em Converts a 10bit pot value to an angle in degrees. \item\end{DoxyCompactList}\item 
+int \hyperlink{_p_i_d_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}{Degrees\_\-To\_\-Pot} (int degrees, int channel)
+\begin{DoxyCompactList}\small\item\em Converts an angle in degrees to a 10bit pot value. \item\end{DoxyCompactList}\item 
+void \hyperlink{_p_i_d_8c_aa619c652b67ff74d33c483456d79d0ea}{Calc\_\-Transfer\_\-Function} (int $\ast$X1, int $\ast$Y1, int $\ast$X2, int $\ast$Y2, int $\ast$slope, int $\ast$intercept, int scale)
+\begin{DoxyCompactList}\small\item\em calculates a linear transfer function's slope and offset, with the slope multiplied by scale to allow for inter only math \item\end{DoxyCompactList}\item 
+\hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} $\ast$ \hyperlink{_p_i_d_8c_a07945831317c390e4224788ceb04d95a}{Add\_\-Pot\_\-Angle} (int valMax, int angMax, int valMin, int angMin, char $\ast$name, char channel)
+\begin{DoxyCompactList}\small\item\em This function creates a \hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} struct. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library of functions for PID control. \begin{DoxyDate}{Date}
+Feb 2, 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Adam Panzica 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 Initial version with functions: \hyperlink{_p_i_d_8c_aa1119e5ecd1e98ca065e95119574fc05}{PID\_\-Initialize()}, $\ast$PID\_\-Add\_\-Channel(), \hyperlink{_p_i_d_8c_a781bfbd112229959a281103e6997f6e0}{PID\_\-Proportional()}, \hyperlink{_p_i_d_8c_af53da3af33f1ef9c8c504e7905864e54}{PID\_\-Integral()}, \hyperlink{_p_i_d_8c_a463084f427720394cce958eed999a4dd}{PID\_\-Derivative()}, \hyperlink{_p_i_d_8c_a7efb1c6c42251234859815a27ce49627}{PID()}, \hyperlink{_p_i_d_8c_af8e0f3873686dd93a84a2b98720e6165}{PID\_\-CorrectionVal\_\-to\_\-Volts()}, and \hyperlink{_p_i_d_8c_aec43762dc86e029b395d4e5819192c2d}{ISR(TIMER0\_\-COMPA\_\-vect)} 
+
+2.0 Added pot functions to allow for dynamic configuration of pot scaling factors. 
+\end{DoxyVersion}
+
+
+\subsection{Define Documentation}
+\hypertarget{_p_i_d_8c_afd579125cbb0710cf36c6688f272b966}{
+\index{PID.c@{PID.c}!SCALE1@{SCALE1}}
+\index{SCALE1@{SCALE1}!PID.c@{PID.c}}
+\subsubsection[{SCALE1}]{\setlength{\rightskip}{0pt plus 5cm}\#define SCALE1~1000}}
+\label{_p_i_d_8c_afd579125cbb0710cf36c6688f272b966}
+Scale factor for Degree to Pot conversion \hypertarget{_p_i_d_8c_aa0141381f267dfc050107e7c5b0d67c1}{
+\index{PID.c@{PID.c}!SCALE2@{SCALE2}}
+\index{SCALE2@{SCALE2}!PID.c@{PID.c}}
+\subsubsection[{SCALE2}]{\setlength{\rightskip}{0pt plus 5cm}\#define SCALE2~10000}}
+\label{_p_i_d_8c_aa0141381f267dfc050107e7c5b0d67c1}
+Scale factor for Pot to Degree conversion 
+
+\subsection{Function Documentation}
+\hypertarget{_p_i_d_8c_a07945831317c390e4224788ceb04d95a}{
+\index{PID.c@{PID.c}!Add\_\-Pot\_\-Angle@{Add\_\-Pot\_\-Angle}}
+\index{Add\_\-Pot\_\-Angle@{Add\_\-Pot\_\-Angle}!PID.c@{PID.c}}
+\subsubsection[{Add\_\-Pot\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf POT\_\-ANGLE} $\ast$ Add\_\-Pot\_\-Angle (int {\em valMax}, \/  int {\em angMax}, \/  int {\em valMin}, \/  int {\em angMin}, \/  char $\ast$ {\em name}, \/  char {\em channel})}}
+\label{_p_i_d_8c_a07945831317c390e4224788ceb04d95a}
+
+
+This function creates a \hyperlink{struct_p_o_t___a_n_g_l_e}{POT\_\-ANGLE} struct. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em valMax}]ADC value at maximum angle \item[\mbox{$\leftarrow$} {\em angMax}]Angle at maximum ADC value \item[\mbox{$\leftarrow$} {\em valMin}]ADC value at minimum angle \item[\mbox{$\leftarrow$} {\em angMin}]Angle at minimum ADC value \item[\mbox{$\leftarrow$} {\em $\ast$name}]pointer to an array of chars containing the name of the angle (max 15 chars) \item[\mbox{$\leftarrow$} {\em channel}]ADC channel that the pot is on \end{DoxyParams}
+\hypertarget{_p_i_d_8c_aa619c652b67ff74d33c483456d79d0ea}{
+\index{PID.c@{PID.c}!Calc\_\-Transfer\_\-Function@{Calc\_\-Transfer\_\-Function}}
+\index{Calc\_\-Transfer\_\-Function@{Calc\_\-Transfer\_\-Function}!PID.c@{PID.c}}
+\subsubsection[{Calc\_\-Transfer\_\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void Calc\_\-Transfer\_\-Function (int $\ast$ {\em X1}, \/  int $\ast$ {\em Y1}, \/  int $\ast$ {\em X2}, \/  int $\ast$ {\em Y2}, \/  int $\ast$ {\em slope}, \/  int $\ast$ {\em intercept}, \/  int {\em scale})}}
+\label{_p_i_d_8c_aa619c652b67ff74d33c483456d79d0ea}
+
+
+calculates a linear transfer function's slope and offset, with the slope multiplied by scale to allow for inter only math 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$X1}]pointer to the lower X bound of the transfer function \item[\mbox{$\leftarrow$} {\em $\ast$Y1}]pointer to the lower Y bound of the transfer function \item[\mbox{$\leftarrow$} {\em $\ast$X2}]pointer to the upper X bound of the transfer function \item[\mbox{$\leftarrow$} {\em $\ast$Y2}]pointer to the upper Y bound of the transfer function \item[\mbox{$\leftarrow$} {\em $\ast$slope}]pointer to a variable to store the slope to \item[\mbox{$\leftarrow$} {\em $\ast$intercept}]point to a variable to store the intercept to \item[\mbox{$\leftarrow$} {\em scale}]scale factor to multiply the slope by \end{DoxyParams}
+\hypertarget{_p_i_d_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}{
+\index{PID.c@{PID.c}!Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}}
+\index{Degrees\_\-To\_\-Pot@{Degrees\_\-To\_\-Pot}!PID.c@{PID.c}}
+\subsubsection[{Degrees\_\-To\_\-Pot}]{\setlength{\rightskip}{0pt plus 5cm}int Degrees\_\-To\_\-Pot (int {\em degrees}, \/  int {\em channel})}}
+\label{_p_i_d_8c_aa3a17ec06666bff62c3227cfc8d9d4aa}
+
+
+Converts an angle in degrees to a 10bit pot value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em degrees}]angle in degrees \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10bit pot value 
+\end{DoxyReturn}
+\hypertarget{_p_i_d_8c_aec43762dc86e029b395d4e5819192c2d}{
+\index{PID.c@{PID.c}!ISR@{ISR}}
+\index{ISR@{ISR}!PID.c@{PID.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (TIMER0\_\-COMPA\_\-vect)}}
+\label{_p_i_d_8c_aec43762dc86e029b395d4e5819192c2d}
+
+
+ISR handler that uses timer 0 to update the PID controller. This function does all of the calculations to update the state of the PID controller. It is called every time that the counter in Timer 0 overflows. This allows the user to set up a set refresh rate for the PID controller independent of external factors. \hypertarget{_p_i_d_8c_a7efb1c6c42251234859815a27ce49627}{
+\index{PID.c@{PID.c}!PID@{PID}}
+\index{PID@{PID}!PID.c@{PID.c}}
+\subsubsection[{PID}]{\setlength{\rightskip}{0pt plus 5cm}int PID ({\bf PID\_\-CHANNEL} $\ast$ {\em PIDchan})}}
+\label{_p_i_d_8c_a7efb1c6c42251234859815a27ce49627}
+
+
+calculates PID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$PIDchan}]pointer to a \hyperlink{struct_p_i_d___c_h_a_n_n_e_l}{PID\_\-CHANNEL} struct \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a correction value using PID
+\end{DoxyReturn}
+This function calculates a PID correction factor following the function PID= P+I+D \hypertarget{_p_i_d_8c_a566367e7249999c52d04102587ed2356}{
+\index{PID.c@{PID.c}!PID\_\-Add\_\-Channel@{PID\_\-Add\_\-Channel}}
+\index{PID\_\-Add\_\-Channel@{PID\_\-Add\_\-Channel}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-Add\_\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PID\_\-CHANNEL} $\ast$ PID\_\-Add\_\-Channel (int $\ast$ {\em target}, \/  int $\ast$ {\em current}, \/  int $\ast$ {\em correctionValue}, \/  int $\ast$ {\em LMDVal}, \/  int {\em Kp}, \/  int {\em Ki}, \/  int {\em Kd}, \/  char {\em spool})}}
+\label{_p_i_d_8c_a566367e7249999c52d04102587ed2356}
+
+
+Adds a PID channel to the PID controller. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$target}]pointer to the target value for this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$current}]pointer to the current value for this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$correctionValue}]pointer to a location to write the correction value from this PID channel \item[\mbox{$\leftarrow$} {\em $\ast$LMDVal}]pointer to a location to write the requested LMD output voltage to. \item[\mbox{$\leftarrow$} {\em Kp}]Proportional gain constant \item[\mbox{$\leftarrow$} {\em Ki}]Integral gain constant \item[\mbox{$\leftarrow$} {\em Kd}]Derivative gain constant \item[\mbox{$\leftarrow$} {\em spool}]Cap value for the Integral element of the PID loop to prevent it from dominating the system \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the added PID channel
+\end{DoxyReturn}
+This function adds a PID channel to the PID controller. It is automatically handled from the moment it is added. Communication with the controller is handled by updating the input communication vars, $\ast$target and $\ast$current. Write to target to change the value that the PID loop seeks, and update current as often as possible to ensure that the PID loop has accurate current state information. The output states of the PID loop can be checked by reading the contents of $\ast$correctionVal and $\ast$LMDVal \hypertarget{_p_i_d_8c_af8e0f3873686dd93a84a2b98720e6165}{
+\index{PID.c@{PID.c}!PID\_\-CorrectionVal\_\-to\_\-Volts@{PID\_\-CorrectionVal\_\-to\_\-Volts}}
+\index{PID\_\-CorrectionVal\_\-to\_\-Volts@{PID\_\-CorrectionVal\_\-to\_\-Volts}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-CorrectionVal\_\-to\_\-Volts}]{\setlength{\rightskip}{0pt plus 5cm}int PID\_\-CorrectionVal\_\-to\_\-Volts (int {\em correctionVal})}}
+\label{_p_i_d_8c_af8e0f3873686dd93a84a2b98720e6165}
+
+
+Turns the unit-\/less number returned by the PID loop into a voltage value for the LMD. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em correctionVal}]PID value to be converted into a voltage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A voltage value between -\/12000 and 12000 mV This function converts the arbitrary, unit-\/less number returned by the PID loop into a voltage value between -\/12000 and 12000 mV that can be used to set the LMD to control motors 
+\end{DoxyReturn}
+\hypertarget{_p_i_d_8c_a463084f427720394cce958eed999a4dd}{
+\index{PID.c@{PID.c}!PID\_\-Derivative@{PID\_\-Derivative}}
+\index{PID\_\-Derivative@{PID\_\-Derivative}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}int PID\_\-Derivative (int $\ast$ {\em error}, \/  int $\ast$ {\em lastError}, \/  int $\ast$ {\em Kd})}}
+\label{_p_i_d_8c_a463084f427720394cce958eed999a4dd}
+
+
+calculates the derivative element of PID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$error}]pointer to an error value \item[\mbox{$\leftarrow$} {\em $\ast$lastError}]point to the previous error value \item[\mbox{$\leftarrow$} {\em $\ast$Kd}]pointer to the derivative gain \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the derivative element of PID
+\end{DoxyReturn}
+This function calculates the derivative element of a PID control loop based off a passed error and last error value and a gain constant, following the function D=(E2-\/E1)/time$\ast$Kd \hypertarget{_p_i_d_8c_aa1119e5ecd1e98ca065e95119574fc05}{
+\index{PID.c@{PID.c}!PID\_\-Initialize@{PID\_\-Initialize}}
+\index{PID\_\-Initialize@{PID\_\-Initialize}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void PID\_\-Initialize ()}}
+\label{_p_i_d_8c_aa1119e5ecd1e98ca065e95119574fc05}
+
+
+Initializes PID control. This function initializes PID by setting up the 8bit timer to refresh at a set frequency. The actual PID calculations are called from the ISR for this timer \hypertarget{_p_i_d_8c_af53da3af33f1ef9c8c504e7905864e54}{
+\index{PID.c@{PID.c}!PID\_\-Integral@{PID\_\-Integral}}
+\index{PID\_\-Integral@{PID\_\-Integral}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-Integral}]{\setlength{\rightskip}{0pt plus 5cm}int PID\_\-Integral (int $\ast$ {\em errorSum}, \/  int $\ast$ {\em Ki})}}
+\label{_p_i_d_8c_af53da3af33f1ef9c8c504e7905864e54}
+
+
+calculates the integral element of PID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$errorSum}]pointer to a value corresponding to the sum of errors \item[\mbox{$\leftarrow$} {\em $\ast$Ki}]pointer to the integral gain \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the integral element of PID
+\end{DoxyReturn}
+This function calculates the integral element of a PID control loop based off a passed sum of errors value and a gain constant, following the function I=sum(E)/time$\ast$Ki \hypertarget{_p_i_d_8c_a781bfbd112229959a281103e6997f6e0}{
+\index{PID.c@{PID.c}!PID\_\-Proportional@{PID\_\-Proportional}}
+\index{PID\_\-Proportional@{PID\_\-Proportional}!PID.c@{PID.c}}
+\subsubsection[{PID\_\-Proportional}]{\setlength{\rightskip}{0pt plus 5cm}int PID\_\-Proportional (int $\ast$ {\em error}, \/  int $\ast$ {\em Kp})}}
+\label{_p_i_d_8c_a781bfbd112229959a281103e6997f6e0}
+
+
+calculates the proportional element of PID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em $\ast$error}]pointer to an error value \item[\mbox{$\leftarrow$} {\em $\ast$Kp}]pointer to the proportional gain \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the proportional element of PID
+\end{DoxyReturn}
+This function calculates the proportional element of a PID control loop based off a passed error value and a gain constant, following the function P=Kp$\ast$E \hypertarget{_p_i_d_8c_ac05daeebea73d0c1095389331b55eeae}{
+\index{PID.c@{PID.c}!Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}}
+\index{Pot\_\-To\_\-Degrees@{Pot\_\-To\_\-Degrees}!PID.c@{PID.c}}
+\subsubsection[{Pot\_\-To\_\-Degrees}]{\setlength{\rightskip}{0pt plus 5cm}int Pot\_\-To\_\-Degrees (int {\em potVal}, \/  int {\em channel})}}
+\label{_p_i_d_8c_ac05daeebea73d0c1095389331b55eeae}
+
+
+Converts a 10bit pot value to an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em potVal}]10bit pot value \item[\mbox{$\leftarrow$} {\em channel}]channel to use for the conversion \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees 
+\end{DoxyReturn}
